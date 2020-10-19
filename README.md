@@ -8,4 +8,4 @@ Geneci Cruz
 Kasia Casserly
 Ronan Behan
 
-Our repository for RubyonRails project.
+Our repository for Ruby on Rails project.
