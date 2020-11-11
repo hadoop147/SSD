@@ -1,57 +1,71 @@
 <% provide(:title, "Home") %>
 
+<div class="w3-container">
+  <div class="w3-container w3-wide w3-third">
+    <p class="w3-xxlarge">shoes@web</p>
+  </div>
+  
+  <div class="w3-container w3-indigo w3-serif w3-twothird">
+    <p class="w3-right-align w3-xlarge"><i>These shoes are made for walking!!</i></p>
+  </div>
+</div>
+
+<br><br>
+
 <!-- Image header -->
-<div claas="container">
-    <div class="w3-display-container">
-        <%= image_tag("shoes2.jpg", alt: "Shoes", style: "width:100%")  %> 
-        <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-            <h1>shoes@web</h1>
-        </div>
-        <div class="w3-display-topright w3-text-white" style="padding:24px 48px">
-            <h2>These shoes are made for Walking!!</h2>
-        </div>
-    </div>
+<div class="w3-container">
+  <div class="w3-display-container">
+      <%= image_tag("shoes2.jpg", alt: "Shoes", style: "width:100%")  %> 
+      <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+          <h1></h1>
+      </div>
+  </div>
 </div>
 
-<br><br>
-
-<div class="w3-row-padding w3-margin-top">
-  <div class="w3-third">
-    <div class="w3-card w3-hover-opacity">
-      <%= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")  %> 
-      <div class="w3-container w3-center">
-        <h5>Mens Shoes</h5>
+<div class="w3-panel">
+  <div class="w3-row-padding w3-margin-top">
+    <div class="w3-third">
+      <div class="w3-card w3-hover-opacity">
+        <%= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")  %> 
+        <div class="w3-container w3-center">
+          <h5>Mens Shoes</h5>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="w3-third">
-    <div class="w3-card w3-hover-opacity">
-      <%= image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%")  %> 
-      <div class="w3-container w3-center">
-        <h5>Womens Shoes</h5>
+  
+    <div class="w3-third">
+      <div class="w3-card w3-hover-opacity">
+        <%= image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%")  %> 
+        <div class="w3-container w3-center">
+          <h5>Womens Shoes</h5>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="w3-third">
-    <div class="w3-card w3-hover-opacity">
-      <%= image_tag("kidShoe.jpg", alt: "Kids Shoe", style: "width:100%")  %> 
-      <div class="w3-container w3-center">
-        <h5>Kids Shoes</h5>
+  
+    <div class="w3-third">
+      <div class="w3-card w3-hover-opacity">
+        <%= image_tag("kidShoe.jpg", alt: "Kids Shoe", style: "width:100%")  %> 
+        <div class="w3-container w3-center">
+          <h5>Kids Shoes</h5>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<br><br>
 
 <!-- Subscribe section -->
-    <div class="w3-container w3-black w3-padding-32 w3-card-4">
-      <h1>Subscribe</h1>
-      <p>To get special offers and VIP treatment:</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
-      <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
-    </div>
+<div class="w3-panel">
+  <div class="w3-black w3-padding-32 w3-card-4 w3-third">
+    <h1 class="w3-margin-left">Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+    <button type="button" class="w3-margin-left w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+  <div class="w3-blue w3-padding-32 w3-card-4 w3-twothird">
+    <h1 class="w3-margin-left">Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+    <button type="button" class="w3-margin-left w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+</div>
     
-

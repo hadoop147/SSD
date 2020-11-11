@@ -1,24 +1,19 @@
-<header class="container">
-  
-    <div class="w3-container w3-white w3-center w3-card-4">
-        <p>Click to accept our terms and conditions.
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-green">Accept</span></p>
-    </div>
+<header class="w3-container">
     
-    <div class="w3-bar w3-black w3-large">
-        <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16 fa fa-home w3-mobile" %> 
-        <%= link_to "About", "/about", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16 w3-mobile"  %>
-        <%= link_to "Products", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 w3-mobile" %>
-        <%= link_to "Contact", "/contact", class: "w3-bar-item w3-button w3-text-white w3-hover-yellow w3-padding-16 w3-hover-text-white w3-mobile" %>
-        <%= link_to "", "/cart", class: "w3-bar-item w3-button w3-text-white w3-hover-orange w3-right w3-padding-16 w3-hover-text-white fa fa-shopping-cart w3-mobile" %>
-     
-        <%= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-mobile" %>
-
-        <%if session[:login] ==1%>
-        <%= link_to "Log Out", "/logout", class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16 w3-mobile" %>
-        <%else%>
-        <%= link_to "Log in", "/login", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-right w3-padding-16 w3-mobile" %>
-        <%end%>
-    </div> 
+        <div class="w3-bar w3-black w3-large">
+            <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16 fa fa-home w3-mobile" %> 
+            <%= link_to "About", "/about", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16 w3-mobile"  %>
+            <%= link_to "Products", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 w3-mobile" %>
+            <%= link_to "Contact", "/contact", class: "w3-bar-item w3-button w3-text-white w3-hover-yellow w3-padding-16 w3-hover-text-white w3-mobile" %>
+            <%= link_to "", "/cart", class: "w3-bar-item w3-button w3-text-white w3-hover-orange w3-right w3-padding-16 w3-hover-text-white fa fa-shopping-cart w3-mobile" %>
+         
+            <%= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-mobile" %>
+    
+            <%if session[:login] ==1%>
+            <%= link_to "Log Out", "/logout", class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16 w3-mobile" %>
+            <%else%>
+            <%= link_to "Log in", "/login", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-right w3-padding-16 w3-mobile" %>
+            <%end%>
+        </div> 
     
 </header>
