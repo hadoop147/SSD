@@ -14,10 +14,7 @@
  *= require_self
  */
 
-.myfont {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color: green;
-}
+
 
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
