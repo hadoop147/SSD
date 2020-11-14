@@ -1,5 +1,6 @@
 <% provide(:title, "Home") %>
 
+<!-- Title section -->
 <div class="w3-container">
   <div class="w3-container w3-wide w3-third w3-bottombar w3-border-black w3-rightbar">
     <p class="w3-xxlarge">shoes@web</p>
@@ -22,20 +23,24 @@
   </div>
 </div>
 
+<!-- Card Image Section -->
 <div class="w3-panel">
   <div class="w3-row-padding w3-margin-top">
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
-        <%= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")  %> 
+        <%= link_to "", "/items" image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %> 
         <div class="w3-container w3-center">
           <h5>Mens Shoes</h5>
         </div>
       </div>
-    </div>
+    </div>  
+    
+    
+    
   
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
-        <%= image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%")  %> 
+        <%= image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%") %> 
         <div class="w3-container w3-center">
           <h5>Womens Shoes</h5>
         </div>
@@ -44,7 +49,7 @@
   
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
-        <%= image_tag("kidShoe.jpg", alt: "Kids Shoe", style: "width:100%")  %> 
+        <%= image_tag("kidShoe.jpg", alt: "Kids Shoe", style: "width:100%") %> 
         <div class="w3-container w3-center">
           <h5>Kids Shoes</h5>
         </div>
