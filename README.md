@@ -1,25 +1,15 @@
-# README
+SSD Ruby on Rails Project 2020
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Team Members: 
 
-Things you may want to cover:
+Rory Cleary
+Genaci DaCruz
+Kasia Casserly
+Ronan Behan
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+Double check that you are in the main branch.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# new
+git pull --rebase
+git push
