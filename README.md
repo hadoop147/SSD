@@ -7,7 +7,7 @@ Genaci DaCruz
 Kasia Casserly
 Ronan Behan
 
-Upload files to the SSD folder that are not source code please.
+Upload files to the SSD Project folder that are not source code please.
 
 To upload the source code to GitHub, complete the following action guys:
 
