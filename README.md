@@ -21,6 +21,7 @@ Then to update the source code to the app folder from Cloud9:
 3. git commit -m "type your commit message here" (a message must be entered)
 4. git push origin main
 
+**Please please please remember, do not DELETE. I will help you commit changes to the the code later.**
 
 
 
