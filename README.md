@@ -1,4 +1,4 @@
-SSD Ruby on Rails Project 2020
+SSD Ruby on Rails Project 2020: shoes@web
 
 Team Members: 
 
@@ -7,7 +7,24 @@ Genaci DaCruz
 Kasia Casserly
 Ronan Behan
 
-Double check that you are in the main branch.
+Upload files to the SSD folder that are not source code please.
 
+To upload the source code to GitHub, complete the following action guys:
+
+Double check that you are in the main branch: 
+
+1. git checkout main
+
+Then to update the source code to the app folder from Cloud9:
+
+2. git add . (use the full-stop as it is very important)
+3. git commit -m "type your commit message here" (a message must be entered)
+4. git push origin main
+
+
+
+
+**Don't use this code**
+**This code is not usable I just want it here as a reminder:
 git pull --rebase
-git push
+git push**
