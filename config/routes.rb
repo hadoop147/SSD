@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get '/logout' => 'user#logout'
   get '/cart' => 'cart#index'
   get '/cart/:id' => 'cart#add'
+  get '/shipment' => 'static_pages#shipment'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
