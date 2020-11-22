@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/shipment' => 'static_pages#shipment'
   get '/support' => 'static_pages#support'
+  get '/returns' => 'static_pages#returns'
+  get '/giftcard' => 'static_pages#giftcard'
+  get '/payment' => 'static_pages#payment'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
