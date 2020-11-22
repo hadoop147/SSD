@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
   
   def shipment
   end
+  
+  def support
+  end
 end
