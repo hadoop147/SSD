@@ -32,3 +32,8 @@
       <%= image_tag("shoe.png", alt: "Favicon Shoe", style: "width:31.8%")  %>
     </div>
   </div>
+  
+  
+  devise code to secure and authenticate your application. to change it use:
+  
+  rails g devise:views
