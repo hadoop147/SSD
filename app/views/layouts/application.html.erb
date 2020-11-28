@@ -21,19 +21,21 @@
   <body>
     
     <%= render '/layouts/header' %>
+    
+    <br>
    
-    <br><br>
-   
-    <%= yield %>
+   <div>
+     <%= yield %>
+   </div>
     
     <!-- Subscribe section -->
     <div class="w3-container">
-      <div class="w3-black w3-padding-32 w3-card-4 w3-half">
+      <div class="w3-black w3-padding-32 w3-card-4 w3-half" style="height:400px">
         <div class="w3-margin-left w3-xlarge w3-right"> 
-          <%= image_tag("shoe.png", alt: "Favicon Shoe", style: "width:45%")  %>
+          <%= image_tag("shoe.png", alt: "Favicon Shoe", style: "width:70%")  %>
         </div>
       </div>
-      <div class="w3-black w3-padding-32 w3-card-4 w3-half">
+      <div class="w3-black w3-padding-32 w3-card-4 w3-half" style="height:400px">
         <h1 class="w3-margin-left">Subscribe</h1>
         <p>To get special offers and VIP treatment:</p>
         <p><input class="w3-input w3-border" style="width:70%" type="text" placeholder="Enter e-mail"></p>
@@ -79,6 +81,8 @@
         </div>
       </div>
     </footer>
+    
+    <br>
 
   </body>
 </html> 

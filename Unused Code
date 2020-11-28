@@ -37,3 +37,11 @@
   devise code to secure and authenticate your application. to change it use:
   
   rails g devise:views
+  
+   <% if user_signed_in? %>
+        <a href="#">Hi <%= current_user.email %></a>
+        <%= link_to "Log out", destroy_user_session_path, :method => :delete, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16 w3-mobile" %>
+        <% else %>
+        <%= link_to "Register", new_user_registration_path, class: "w3-bar-item w3-button w3-text-white w3-hover-yellow w3-right w3-padding-16 w3-mobile" %> 
+        <%= link_to "Log in", new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16 w3-mobile" %>
+        <% end %>
