@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
   
-  devise_for :users do
-    resources:orders
-  end 
-  
-  #devise_for :users
-  #get 'cart/index'
-
   resources :orders do
     resources:orderitems
   end
+  
+  #resources :orders
+  
+  devise_for :users do
+    resources:orders
+  end 
+  get '/checkout' => 'cart#createOrder'
+  
+  #devise_for :users
+  get 'cart/index'
 
   resources :items
   root 'static_pages#home'
@@ -27,9 +30,11 @@ Rails.application.routes.draw do
   get '/remove/:id' => 'cart#remove'
   get '/decrease/:id' => 'cart#decrease'
   #get '/increase/:id' => 'cart#increase'
+  
   get '/paid/:id' => 'static_pages#paid'
-  get '/admin' => 'static_pages#adminsection'
-  get '/checkout' => 'cart#createOrder'
+  
+  get '/admin' => 'static_pages#admincontrol'
+ 
   get '/done' => 'cart#done'
   
     
@@ -44,7 +49,3 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-  #get '/pretend_login' => 'user#pretendlogin'
-  
-  #get '/pretend_logout' => 'user#pretendlogout'

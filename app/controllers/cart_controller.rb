@@ -53,6 +53,12 @@ class CartController < ApplicationController
   end 
   
   def createOrder 
+    
+    #for a guest user - cart controller needs to be changed for authenication
+    #if user_signed_in? do
+    #@user = 'guest'
+    #end
+    
     # Step 1 Find user information
     @user = User.find(current_user.id)
       
@@ -69,6 +75,7 @@ class CartController < ApplicationController
     @orderitem = @order.orderitems.build(:item_id => item.id, :title => item.title, :description => item.description, :quantity => quantity, :price => item.price)
     @orderitem.save
     end 
+    
     @orders = Order.all
     @orderitems = Orderitem.where(order_id: Order.last)
     #<% @orderitems.each do |id, quantity| %>
@@ -77,9 +84,9 @@ class CartController < ApplicationController
   end 
   
   #def done
-    # @orders.limit(1).order(id: :desc).where(user: User.find(current_user.id))
-   # @orderitems = Orderitem.where(order_id: Order.limit(1).order(id: :desc).where(user: User.find(current_user.id)))
-    # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
+    #@orders.limit(1).order(id: :desc).where(user: User.find(current_user.id))
+    #@orderitems = Orderitem.where(order_id: Order.limit(1).order(id: :desc).where(user: User.find(current_user.id)))
+    #Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
   #end
 end
   

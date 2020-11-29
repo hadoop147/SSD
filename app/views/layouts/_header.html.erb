@@ -7,6 +7,8 @@
         <%= link_to "Kids", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
         <%= link_to "", "/cart", class: "w3-bar-item w3-button w3-text-white w3-hover-orange w3-right w3-padding-16 w3-hover-text-white fa fa-shopping-cart w3-xlarge" %>
         <%= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-xlarge" %>
+        <%= link_to "Admin", "/admin", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+
     </div>
     
     <!-- Title section -->
@@ -15,15 +17,13 @@
     </div>
      
     <div class="w3-indigo w3-twothird w3-bottombar w3-border-black w3-medium"  style="height:60px;" >
-        
-            <% if user_signed_in? %>
-            <a href="#">Hi <%= current_user.email %></a>
-            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16" %>
-            <% else %>
-            <%= link_to 'Register', new_user_registration_path ,class: "w3-bar-item w3-button w3-text-white w3-hover-pale-green w3-right w3-padding-16" %>
-            <%= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
-            <% end %>
-        
+        <% if user_signed_in? %>
+        <a href="#"><%= current_user.email %></a>
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16" %>
+        <% else %>
+        <%= link_to 'Register', new_user_registration_path ,class: "w3-bar-item w3-button w3-text-white w3-hover-pale-green w3-right w3-padding-16" %>
+        <%= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
+        <% end %>
     </div>
 
 </header>

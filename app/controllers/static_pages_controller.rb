@@ -25,14 +25,13 @@ class StaticPagesController < ApplicationController
   def giftcard
   end
   
-  def adminsection
+  def admincontrol
     @orders = Order.all
   end
 
   def paid
     @order = Order.last
-    
-    @order.update_attribute(:status, 'This Has Been Paid')
+    @order.update_attribute(:status, 'Order Paid')
   end
   
 end
