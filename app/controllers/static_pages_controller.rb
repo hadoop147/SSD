@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
   end
   
   def support
-    #session[:cart] = nil #a little hack to clear cart if you make error and it refuses to clear the session and clears the errpr in your code
+    #session[:cart] = nil #a little hack to clear cart if you make error and it refuses to clear the session and clears the error in your code
   end
   
   def returns 
