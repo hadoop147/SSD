@@ -24,7 +24,7 @@ class CartController < ApplicationController
     else
       cart[id] = 1#if it was not in the cart then add one now
     end
-      #send the user somewhere noew that the product is added
+      #send the user somewhere now that the product is added
       redirect_to :action => :index
   end
   
@@ -48,6 +48,18 @@ class CartController < ApplicationController
       cart.delete id
     else
       cart[id] = cart[id] - 1
+    end
+    redirect_to :action => :index
+  end 
+  
+  def increase
+    id = params[:id]
+    cart = session[:cart]
+    
+    if cart[id] == 1 then
+      cart.delete id
+    else
+      cart[id] = cart[id] + 1
     end
     redirect_to :action => :index
   end 
@@ -90,5 +102,3 @@ class CartController < ApplicationController
   #end
 end
   
-  
- 

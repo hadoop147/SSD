@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get '/clearcart' => 'cart#clearcart'
   get '/remove/:id' => 'cart#remove'
   get '/decrease/:id' => 'cart#decrease'
-  #get '/increase/:id' => 'cart#increase'
+  get '/increase/:id' => 'cart#increase'
   
   get '/paid/:id' => 'static_pages#paid'
   
