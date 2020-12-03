@@ -56,11 +56,8 @@ class CartController < ApplicationController
     id = params[:id]
     cart = session[:cart]
     
-    if cart[id] == 1 then
-      cart.delete id
-    else
-      cart[id] = cart[id] + 1
-    end
+    cart[id] = cart[id] + 1
+    
     redirect_to :action => :index
   end 
   
