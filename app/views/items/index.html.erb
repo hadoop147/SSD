@@ -12,24 +12,34 @@
   <% @items.each do |item| %>
   
   <!--<div class="">-->
-  <div class="w3-container">
-    <h1><%= item.title %></h1>
-    <%= link_to (image_tag item.image_url, :class => ""), item %>
-    <p><%= item.description %></p>
-    <p>Price <%= number_to_currency(item.price, :unit => "€") %>
-    <br>
-    Category: <%= item.category %>
-    <br>
-    Brand: <%= item.brand %></p>
+  <div class="itemsIndex w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        <div class="w3-margin-left w3-xlarge w3-right"> 
+           <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+        </div>
+      </div>
+      <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+        <h1><%= item.title %></h1>
+        <div class="w3-margin-left"></div>
+        <p><%= item.description %></p>
+        <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+        <br>
+        Category: <%= item.category %>
+        <br>
+        Brand: <%= item.brand %></p>
+        
+        <p>
+         <% if user_signed_in? %>
+         <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+         <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+         <%= link_to 'Delete',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+         <% end %>
+         <a href="/cart/<%= item.id %>" class="button">Add to Cart</a>
+         </p>
+      </div>
+    </div>
     
-    <p>
-     <% if user_signed_in? %>
-     <%= link_to 'Show',  item, :class => "button", :role => "button" %>
-     <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
-     <%= link_to 'Delete',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
-     <% end %>
-     <a href="/cart/<%= item.id %>" class="button">Add to Cart</a>
-     </p>
-  </div>
   <% end %>
 </div>
+
+   
