@@ -1,4 +1,33 @@
+body, h1, h2, h3, h4, h5, h6 {
+  /*font-family: Verdana, Geneva, sans-serif;*/
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
+.itemsForm { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.itemsOrder { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.contact { 
+    margin: auto;
+    width:40%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.welcomeIm {width: 30%;}
 
 #itemsContainer {
     width: 100%;

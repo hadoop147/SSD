@@ -1,6 +1,11 @@
 <% provide(:title, "Items") %>
 
+<% #if admin_signed_in? %>
+<%= link_to 'New Item',  new_item_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
+
 <div id="itemsContainer">
  <h1>Shoes</h1>
  <% @items.each do |item| %>
@@ -27,6 +32,3 @@
  <% end %>
 
 </div>
-<br>
-
-<%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
