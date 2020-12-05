@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :shippings
+  resources :payments
+  resources :products
+  resources :offers
+  resources :brands
+  resources :categories
+  resources :addresses
+  resources :admins
+  resources :customers
   resources :orders do
     resources:orderitems
   end
