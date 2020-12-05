@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   
   #resources :orders
   
+  devise_for :admin do
+    resources:orders
+  end
+  
   devise_for :users do
     resources:orders
-  end 
+  end
+  
   get '/checkout' => 'cart#createOrder'
   
   #devise_for :users
@@ -46,15 +51,12 @@ Rails.application.routes.draw do
  
   get '/done' => 'cart#done'
   
-    
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
   get '/shipment' => 'static_pages#shipment'
   get '/support' => 'static_pages#support'
   get '/returns' => 'static_pages#returns'
-  get '/giftcard' => 'static_pages#giftcard'
+  get '/offers' => 'static_pages#offers'
   get '/payment' => 'static_pages#payment'
-  
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

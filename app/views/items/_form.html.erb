@@ -7,7 +7,7 @@
     
     <br>
     
-  <form class="w3-container w3-text-grey" action="/action_page.php">
+  <div class="w3-container w3-text-grey">
     <%= form_for(item) do |f| %>
     <% if item.errors.any? %>
     
@@ -56,7 +56,7 @@
         <%= f.submit %>
       </div>
     <% end %>
-  </form>
+  </div>
 </div>
 </div>
 
