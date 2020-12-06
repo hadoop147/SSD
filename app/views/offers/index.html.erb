@@ -1,6 +1,15 @@
+<% provide(:title, "Offers") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Offers',  new_offer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Offers</h1>
+<!--<div class="offers">-->
+<div class="w3-panel w3-card-4 w3-red w3-center w3-topbar w3-bottombar w3-border-black w3-animate-zoom">
+    <div class="w3-jumbo">Special Offers</div>
+</div>
 
 <table>
   <thead>
@@ -18,9 +27,11 @@
         <td><%= offer.offertype %></td>
         <td><%= offer.description %></td>
         <td><%= offer.pricereduction %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Show', offer %></td>
         <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
         <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +39,7 @@
 
 <br>
 
-<%= link_to 'New Offer', new_offer_path %>
+
+
+
+

@@ -1,6 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Offers") %>
 
-<%= link_to 'New Order', new_order_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button"  %>
+<% #if admin_signed_in? %>
+<%= link_to 'New Offers',  new_order_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
+<p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
 

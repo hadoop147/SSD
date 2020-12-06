@@ -1,32 +1,48 @@
-<%= form_for(offer) do |f| %>
-  <% if offer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
-
-      <ul>
-      <% offer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class='offers'>
+  
+  <div class="w3-card-4">
+    <div class="w3-container w3-green w3-text-white w3-center">
+      <h2>New Offer</h2>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :offertype %>
-    <%= f.text_field :offertype %>
+    
+    <br>
+    
+  <div class="w3-container w3-text-grey">
+    <%= form_for(offer) do |f| %>
+      <% if offer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+    
+          <ul>
+          <% offer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="field">
+        <%= f.label :offertype %>
+        <%= f.text_field :offertype %>
+      </div>
+    
+      <div class="field" style="height:100px">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :pricereduction %>
+        <%= f.text_field :pricereduction %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+    
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :pricereduction %>
-    <%= f.text_field :pricereduction %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<br>
