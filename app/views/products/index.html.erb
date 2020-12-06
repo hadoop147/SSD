@@ -1,3 +1,9 @@
+<% provide(:title, "Products") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Product',  new_product_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #resources :orders
   
   devise_for :admin do
-    resources:orders
+    resources:orders.all
   end
   
   devise_for :users do
