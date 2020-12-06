@@ -1,7 +1,7 @@
 <header class="w3-container">
-    
+
     <div class="w3-bar w3-black w3-large"  style="height:55px;" >
-        <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 fa fa-home w3-xlarge" %> 
+        <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 fa fa-home w3-xlarge" %>
         <%= link_to "Men", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%= link_to "Women", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-padding-16" %>
         <%= link_to "Kids", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
@@ -9,15 +9,16 @@
         <%= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-xlarge" %>
         <%= link_to "Admin", "/admin", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
     </div>
-    
+
     <!-- Title section -->
     <div class="w3-wide w3-third w3-bottombar w3-border-black w3-rightbar"  style="height:60px;" >
         <div class="w3-xxlarge">shoes@web</div>
     </div>
-     
+
     <div class="w3-indigo w3-twothird w3-bottombar w3-border-black w3-medium"  style="height:60px;" >
         <% if user_signed_in? %>
-        <a href="#"><%= current_user.email %></a>
+        <a href="#"><%= current_user.fname %></a>
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
         <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16" %>
         <% else %>
         <%= link_to 'Register', new_user_registration_path ,class: "w3-bar-item w3-button w3-text-white w3-hover-pale-green w3-right w3-padding-16" %>
