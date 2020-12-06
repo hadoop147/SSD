@@ -1,16 +1,21 @@
 <div class='itemsOrder'>
-  
+
 <div class="w3-card-4">
     <div class="w3-container w3-green w3-text-white w3-center">
       <h2>New Order</h2>
     </div>
-    
+
     <br>
+<<<<<<< HEAD
     
   <div class="w3-container w3-text-grey">
+=======
+
+  <form class="w3-container w3-text-grey" action="/action_page.php">
+>>>>>>> 3fb6af841b0f8239e0f96ce80091681066c8cade
     <%= form_for(order) do |f| %>
     <% if order.errors.any? %>
-    
+
       <div id="error_explanation">
         <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
         <ul>
