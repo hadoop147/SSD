@@ -85,6 +85,22 @@ body, h1, h2, h3, h4, h5, h6 {
     /*text-align: center;*/
 }
 
+.orders { 
+    margin: auto;
+    width:25%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.editUser { 
+    margin: auto;
+    width:40%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
 /*#itemsContainer {
     width: 100%;
     text-align: center;
