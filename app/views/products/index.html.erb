@@ -15,13 +15,13 @@
 <!--<h1>Products</h1>-->
 
 <div class="productsIndex w3-container">
-      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:600px">
         <div class="w3-margin-left w3-xlarge w3-right"> 
            <%= link_to (image_tag product.image_url, :class => "productholsIm"), product %>
         </div>
       </div>
   
-    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+    <div class="w3-sand w3-padding-64 w3-half" style="height:600px">
       <h1><%= product.prod_name %></h1>
       <div class="w3-margin-left"></div>
       <p><%= product.description %></p>
@@ -30,11 +30,29 @@
       <p><%= product.prod_size %></p>
       <p><%= product.colours %></p>
       <p><%= product.offer %></p>
-      <p>Price <%= number_to_currency(product.price, :unit => "€") %>
+      <p>Price <%= number_to_currency(product.prod_price, :unit => "€") %>
       <br>
       Category: <%= product.category %>
       <br>
       Brand: <%= product.brand %></p>
+      
+        <p>
+          <% if user_signed_in? %>
+          <%= link_to 'Show', product, :class => "button", :role => "button" %>
+          <%= link_to 'Edit', edit_product_path(product), :class => "button", :role => "button" %>
+          <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+          <% end %>
+          <a href="/cart/<%= product.id %>" class="button">Add to Cart</a>
+        </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
+<br>
+
 
 <!--<table>
   <thead>
@@ -55,36 +73,19 @@
   </thead>
 
   <tbody>
-    <% #@products.each do |product| %>
+    <#% #@products.each do |product| %>
       <tr>
-        <td><%= product.prod_name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.stock_quantity %></td>
-        <td><%= product.prod_gender %></td>
-        <td><%= product.prod_price %></td>
-        <td><%= product.prod_size %></td>
-        <td><%= product.colours %></td>
-        <td><%= product.image_url %></td>
-        <td><%= product.offer %></td>
-        <td><%= product.category %></td>
-        <td><%= product.brand %></td>
+        <td><%#= product.prod_name %></td>
+        <td><%#= product.description %></td>
+        <td><%#= product.stock_quantity %></td>
+        <td><%#= product.prod_gender %></td>
+        <td><%#= product.prod_price %></td>
+        <td><%#= product.prod_size %></td>
+        <td><%#= product.colours %></td>
+        <td><%#= product.image_url %></td>
+        <td><%#= product.offer %></td>
+        <td><%#= product.category %></td>
+        <td><%#= product.brand %></td>
         
   </tbody>
 </table>-->
-
-        <p>
-          <% if user_signed_in? %>
-          <%= link_to 'Show', product, :class => "button", :role => "button" %>
-          <%= link_to 'Edit', edit_product_path(product, :class => "button", :role => "button") %>
-          <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
-          <% end %>
-          <a href="/cart/<%= product.id %>" class="button">Add to Cart</a>
-        </p>
-    </div>
-  </div>
-    
-  <% end %>
-  
-</div>
-  
-<br>

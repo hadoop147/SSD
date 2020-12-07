@@ -49,18 +49,18 @@
   </thead>
 
   <tbody>
-    <% @categories.each do |category| %>
+    <#% @categories.each do |category| %>
       <tr>
-        <td><%= category.cat_name %></td>
-        <td><%= category.description %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><#%= category.cat_name %></td>
+        <td><#%= category.description %></td>
+        <td><#%= link_to 'Show', category %></td>
+        <td><#%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><#%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <#% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>-->
+<#%= link_to 'New Category', new_category_path %>-->
