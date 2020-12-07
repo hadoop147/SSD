@@ -1,6 +1,6 @@
-<h1>Editing Offer</h1>
-
-<%= render 'form', offer: @offer %>
-
-<%= link_to 'Show', @offer %> |
-<%= link_to 'Back', offers_path %>
+<div class="w3-container">
+    <h1>Editing Offer</h1>
+    <%= link_to 'Show', @brand, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
+    <%= link_to 'Back', offers_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>
+    <%= render 'form', offer: @offer %>
+</div>

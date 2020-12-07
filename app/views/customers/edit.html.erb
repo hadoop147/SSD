@@ -1,6 +1,13 @@
-<h1>Editing Customer</h1>
+<!--<h1>Editing Customer</h1>
 
 <%= render 'form', customer: @customer %>
 
 <%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Back', customers_path %>-->
+
+<div class="w3-container">
+    <h1>Editing Customer</h1>
+    <%= link_to 'Show', @customer, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
+    <%= link_to 'Back', customers_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>
+    <%= render 'form', customer: @customer %>
+</div>

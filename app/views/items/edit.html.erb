@@ -1,6 +1,13 @@
-<h1>Editing Item</h1>
+<!--<h1>Editing Item</h1>
 
 <%= render 'form', item: @item %>
 
 <%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', items_path %>-->
+
+<div class="w3-container">
+    <h1>Editing Item</h1>
+    <%= link_to 'Show', @item, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
+    <%= link_to 'Back', items_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>
+    <%= render 'form', item: @item %>
+</div>

@@ -1,6 +1,13 @@
-<h1>Editing Shipping</h1>
+<!--<h1>Editing Shipping</h1>
 
 <%= render 'form', shipping: @shipping %>
 
 <%= link_to 'Show', @shipping %> |
-<%= link_to 'Back', shippings_path %>
+<%= link_to 'Back', shippings_path %>-->
+
+<div class="w3-container">
+    <h1>Editing Shipping</h1>
+    <%= link_to 'Show', @shipping, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
+    <%= link_to 'Back', shippings_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>
+    <%= render 'form', shipping: @shipping %>
+</div>

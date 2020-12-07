@@ -22,7 +22,7 @@
       <% end %>
     
       <div class="field">
-        <%= f.label :prod_name %>
+        <%= f.label :name %>
         <%= f.text_field :prod_name %>
       </div>
     
@@ -30,24 +30,28 @@
         <%= f.label :description %>
         <%= f.text_field :description %>
       </div>
+      
+      <br>
     
       <div class="field">
         <%= f.label :stock_quantity %>
-        <%= f.number_field :stock_quantity %>
+        <%= f.number_field :stock_quantity, style: "width:100%" %>
       </div>
+      
+      <br>
     
       <div class="field">
-        <%= f.label :prod_gender %>
+        <%= f.label :gender %>
         <%= f.text_field :prod_gender %>
       </div>
     
       <div class="field">
-        <%= f.label :prod_price %>
+        <%= f.label :price %>
         <%= f.text_field :prod_price %>
       </div>
     
       <div class="field">
-        <%= f.label :prod_size %>
+        <%= f.label :size %>
         <%= f.text_field :prod_size %>
       </div>
     

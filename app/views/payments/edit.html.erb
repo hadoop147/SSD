@@ -1,6 +1,13 @@
-<h1>Editing Payment</h1>
+<!--<h1>Editing Payment</h1>
 
 <%= render 'form', payment: @payment %>
 
 <%= link_to 'Show', @payment %> |
-<%= link_to 'Back', payments_path %>
+<%= link_to 'Back', payments_path %>-->
+
+<div class="w3-container">
+    <h1>Editing Payment</h1>
+    <%= link_to 'Show', @payment, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
+    <%= link_to 'Back', payments_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>
+    <%= render 'form', payment: @payment %>
+</div>
