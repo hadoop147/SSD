@@ -1,8 +1,47 @@
+<% provide(:title, "Brands") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Brand',  new_brand_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Brands</h1>
+<!--<h1>Brands</h1>-->
 
-<table>
+<div class="w3-container">
+  <div class="w3-panel w3-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Brands</div>
+  <% @brands.each do |brand| %>
+  
+  <div class="brands w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        <div class="w3-margin-left w3-xlarge w3-right"> 
+           <%= link_to (image_tag brand.image_url, :class => "productholsIm"), brand %>
+        </div>
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+      <h1><%= brand.brand_name %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= brand.description %></p>
+      <p><%= brand.yearofestablishement %></p>
+      <p>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', product, :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_product_path(product, :class => "button", :role => "button") %>
+        <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
+<br>
+  
+
+<!--<table>
   <thead>
     <tr>
       <th>Brand name</th>
@@ -28,4 +67,4 @@
 
 <br>
 
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to 'New Brand', new_brand_path %>-->

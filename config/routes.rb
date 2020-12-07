@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   get '/items' => 'items#index'
+  get '/products' => 'products#index'
   
   #get '/login' => 'user#login'
   #get '/logout' => 'user#logout'
@@ -46,10 +47,9 @@ Rails.application.routes.draw do
   get '/increase/:id' => 'cart#increase'
   
   get '/paid/:id' => 'static_pages#paid'
+  get '/done' => 'cart#done'
   
   get '/admin' => 'static_pages#admincontrol'
- 
-  get '/done' => 'cart#done'
   
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
@@ -58,5 +58,10 @@ Rails.application.routes.draw do
   get '/returns' => 'static_pages#returns'
   get '/offers' => 'static_pages#offers'
   get '/payment' => 'static_pages#payment'
+  get '/brands' => 'static_pages#brands'
+  get '/categories' => 'static_pages#categories'
+  get '/addresses' => 'static_pages#addresses'
+  
+  get'/search' => 'search_pages#search'
 
 end

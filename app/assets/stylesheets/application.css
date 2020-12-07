@@ -19,6 +19,14 @@ body, h1, h2, h3, h4, h5, h6 {
     /*text-align: center;*/
 }
 
+.productsForm { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
 .contact { 
     margin: auto;
     width:40%;
@@ -40,6 +48,38 @@ body, h1, h2, h3, h4, h5, h6 {
 .itemsIndex { 
     margin: auto;
     width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.productsIndex { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.brands { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.categories { 
+    margin: auto;
+    width:50%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.login { 
+    margin: auto;
+    width:25%;
     /*border: 10px solid #b3e0ff;*/
     padding: 10px;
     /*text-align: center;*/
@@ -87,6 +127,12 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 */
 .itemholsIm {
+    width: 90%; 
+    /*margin-left: auto; 
+    margin-right: auto;*/ 
+}
+
+.productholsIm {
     width: 90%; 
     /*margin-left: auto; 
     margin-right: auto;*/ 

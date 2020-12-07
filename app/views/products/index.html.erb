@@ -6,9 +6,37 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<!--productss container-->
+<!--<div id="productssContainer">-->
+<div class="w3-container">
+  <div class="w3-panel w3-indigo w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Products</div>
+  <% @products.each do |product| %>
 
-<table>
+<!--<h1>Products</h1>-->
+
+<div class="productsIndex w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        <div class="w3-margin-left w3-xlarge w3-right"> 
+           <%= link_to (image_tag product.image_url, :class => "productholsIm"), product %>
+        </div>
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+      <h1><%= product.prod_name %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= product.description %></p>
+      <p><%= product.stock_quantity %></p>
+      <p><%= product.prod_gender %></p>
+      <p><%= product.prod_size %></p>
+      <p><%= product.colours %></p>
+      <p><%= product.offer %></p>
+      <p>Price <%= number_to_currency(product.price, :unit => "€") %>
+      <br>
+      Category: <%= product.category %>
+      <br>
+      Brand: <%= product.brand %></p>
+
+<!--<table>
   <thead>
     <tr>
       <th>Prod name</th>
@@ -27,7 +55,7 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
+    <% #@products.each do |product| %>
       <tr>
         <td><%= product.prod_name %></td>
         <td><%= product.description %></td>
@@ -40,14 +68,23 @@
         <td><%= product.offer %></td>
         <td><%= product.category %></td>
         <td><%= product.brand %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+        
   </tbody>
-</table>
+</table>-->
 
+        <p>
+          <% if user_signed_in? %>
+          <%= link_to 'Show', product, :class => "button", :role => "button" %>
+          <%= link_to 'Edit', edit_product_path(product, :class => "button", :role => "button") %>
+          <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+          <% end %>
+          <a href="/cart/<%= product.id %>" class="button">Add to Cart</a>
+        </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
 <br>
-
-<%= link_to 'New Product', new_product_path %>
