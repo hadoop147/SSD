@@ -1,37 +1,52 @@
-<%= form_for(shipping) do |f| %>
-  <% if shipping.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(shipping.errors.count, "error") %> prohibited this shipping from being saved:</h2>
-
-      <ul>
-      <% shipping.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class='shipping'>
+  
+  <div class="w3-card-4">
+    <div class="w3-container w3-teal w3-text-white w3-center">
+      <h2>New Shipping</h2>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :date_shipped %>
-    <%= f.date_select :date_shipped %>
+    
+    <br>
+    
+    <div class="w3-container w3-text-grey">
+    <%= form_for(shipping) do |f| %>
+      <% if shipping.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(shipping.errors.count, "error") %> prohibited this shipping from being saved:</h2>
+    
+          <ul>
+          <% shipping.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="field">
+        <%= f.label :date_shipped %>
+        <%= f.date_select :date_shipped %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :customer_id %>
+        <%= f.text_field :customer_id %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :address_id %>
+        <%= f.text_field :address_id %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :order_id %>
+        <%= f.text_field :order_id %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :customer_id %>
-    <%= f.text_field :customer_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address_id %>
-    <%= f.text_field :address_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :order_id %>
-    <%= f.text_field :order_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<br>

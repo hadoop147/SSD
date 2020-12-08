@@ -1,5 +1,5 @@
-<h1>New Payment</h1>
+<!--<h1>New Payment</h1>-->
 
-<%= render 'form', payment: @payment %>
+<%= link_to 'Back', payments_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 
-<%= link_to 'Back', payments_path %>
+<%= render 'form',  payment: @payment %>

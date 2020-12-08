@@ -1,52 +1,71 @@
-<%= form_for(payment) do |f| %>
-  <% if payment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
-
-      <ul>
-      <% payment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class='payments'>
+  
+  <div class="w3-card-4">
+    <div class="w3-container w3-yellow w3-text-black w3-center">
+      <h2>New Payment</h2>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :pay_method %>
-    <%= f.text_field :pay_method %>
+    
+    <br>
+    
+    <div class="w3-container w3-text-grey">
+      <%= form_for(payment) do |f| %>
+        <% if payment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+      
+            <ul>
+            <% payment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      
+        <div class="field">
+          <%= f.label :pay_method %>
+          <%= f.text_field :pay_method %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :card_number %>
+          <%= f.text_field :card_number %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :expiration_date %>
+          <%= f.date_select :expiration_date %>
+        </div>
+        
+        <br>
+      
+        <div class="field">
+          <%= f.label :card_code %>
+          <%= f.number_field :card_code, style: "width:100%" %>
+        </div>
+        
+        <br>
+      
+        <div class="field">
+          <%= f.label :customer_id %>
+          <%= f.text_field :customer_id %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :shipping_id %>
+          <%= f.text_field :shipping_id %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :order_id %>
+          <%= f.text_field :order_id %>
+        </div>
+      
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :card_number %>
-    <%= f.text_field :card_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :expiration_date %>
-    <%= f.date_select :expiration_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :card_code %>
-    <%= f.number_field :card_code %>
-  </div>
-
-  <div class="field">
-    <%= f.label :customer_id %>
-    <%= f.text_field :customer_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :shipping_id %>
-    <%= f.text_field :shipping_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :order_id %>
-    <%= f.text_field :order_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<br>

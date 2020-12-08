@@ -1,4 +1,45 @@
+<% provide(:title, "Customers") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Customer',  new_customer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
+
+<div class="w3-container">
+  <div class="w3-panel w3-purple w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Customers</div>
+  <% @customers.each do |customer| %>
+  
+  <div class="admins w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+      <!--<#% @customers.each do |customer| %>-->
+      <h1><%= customer.fname %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= customer.lname %></p>
+      <p><%= customer.phonenumber %></p>
+      <p><%= customer.date_of_birth %></p>
+      <p><%= customer.user %></p>
+      <p>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', customer, :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_customer_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
+<br>
+
+<!--<p id="notice"><%#= notice %></p>
 
 <h1>Customers</h1>
 
@@ -15,21 +56,21 @@
   </thead>
 
   <tbody>
-    <% @customers.each do |customer| %>
+    <%# @customers.each do |customer| %>
       <tr>
-        <td><%= customer.fname %></td>
-        <td><%= customer.lname %></td>
-        <td><%= customer.phonenumber %></td>
-        <td><%= customer.date_of_birth %></td>
-        <td><%= customer.user %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= customer.fname %></td>
+        <td><%#= customer.lname %></td>
+        <td><#%= customer.phonenumber %></td>
+        <td><%#= customer.date_of_birth %></td>
+        <td><%#= customer.user %></td>
+        <td><#%= link_to 'Show', customer %></td>
+        <td><%#= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%#= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%#= link_to 'New Customer', new_customer_path %>-->

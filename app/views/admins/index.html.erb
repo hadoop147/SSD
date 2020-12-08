@@ -1,6 +1,44 @@
+<% provide(:title, "Admins") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Admin',  new_admin_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Admins</h1>
+<div class="w3-container">
+  <div class="w3-panel w3-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Admins</div>
+  <% @admins.each do |admin| %>
+  
+  <div class="admins w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+      <h1><%= admin.fname %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= admin.lname %></p>
+      <p><%= admin.phonenumber %></p>
+      <p><%= admin.date_of_birth %></p>
+      <p><%= admin.user %></p>
+      <p>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', admin, :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_admin_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Delete', admin, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
+<br>
+
+<!--<h1>Admins</h1>
 
 <table>
   <thead>
@@ -15,21 +53,21 @@
   </thead>
 
   <tbody>
-    <% @admins.each do |admin| %>
+    <%# @admins.each do |admin| %>
       <tr>
-        <td><%= admin.fname %></td>
-        <td><%= admin.lname %></td>
-        <td><%= admin.phonenumber %></td>
-        <td><%= admin.date_of_birth %></td>
-        <td><%= admin.user %></td>
-        <td><%= link_to 'Show', admin %></td>
-        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-        <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= admin.fname %></td>
+        <td><%#= admin.lname %></td>
+        <td><%#= admin.phonenumber %></td>
+        <td><%#= admin.date_of_birth %></td>
+        <td><%#= admin.user %></td>
+        <td><#= link_to 'Show', admin %></td>
+        <td><%#= link_to 'Edit', edit_admin_path(admin) %></td>
+        <td><%#= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
-<br>
+<br>-->
 
-<%= link_to 'New Admin', new_admin_path %>
+<!--<%#= link_to 'New Admin', new_admin_path %>-->

@@ -53,14 +53,15 @@ Rails.application.routes.draw do
   
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
-  get '/shipment' => 'static_pages#shipment'
+  get '/shippings' => 'static_pages#shippings'
   get '/support' => 'static_pages#support'
   get '/returns' => 'static_pages#returns'
   get '/offers' => 'static_pages#offers'
-  get '/payment' => 'static_pages#payment'
+  get '/payments' => 'static_pages#payments'
   get '/brands' => 'static_pages#brands'
   get '/categories' => 'static_pages#categories'
   get '/addresses' => 'static_pages#addresses'
+  get '/customers' => 'static_pages#customers'
   
   get'/search' => 'search_pages#search'
 

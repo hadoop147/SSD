@@ -1,6 +1,47 @@
+<% provide(:title, "Payments") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Payment',  new_payment_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Payments</h1>
+<div class="w3-container">
+  <div class="w3-panel w3-yellow w3-text-black w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Payments</div>
+  <% @payments.each do |payment| %>
+  
+  <div class="admins w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+    <!--<#% @payments.each do |payment| %>-->
+      <h1><%= payment.pay_method %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= payment.card_number %></p>
+      <p><%= payment.expiration_date %></p>
+      <p><%= payment.card_code %></p>
+      <p><%= payment.customer %></p>
+      <p><%= payment.shipping %></p>
+      <p><%= payment.order %></p>
+      <p>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', payment, :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_payment_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
+
+
+<!--<h1>Payments</h1>
 
 <table>
   <thead>
@@ -17,23 +58,23 @@
   </thead>
 
   <tbody>
-    <% @payments.each do |payment| %>
+    <#% @payments.each do |payment| %>
       <tr>
-        <td><%= payment.pay_method %></td>
-        <td><%= payment.card_number %></td>
-        <td><%= payment.expiration_date %></td>
-        <td><%= payment.card_code %></td>
-        <td><%= payment.customer %></td>
-        <td><%= payment.shipping %></td>
-        <td><%= payment.order %></td>
-        <td><%= link_to 'Show', payment %></td>
-        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
-        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><#%= payment.pay_method %></td>
+        <td><#%= payment.card_number %></td>
+        <td><#%= payment.expiration_date %></td>
+        <td><#%= payment.card_code %></td>
+        <td><#%= payment.customer %></td>
+        <td><#%= payment.shipping %></td>
+        <td><#%= payment.order %></td>
+        <td><#%= link_to 'Show', payment %></td>
+        <td><#%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><#%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <#% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Payment', new_payment_path %>
+<#%= link_to 'New Payment', new_payment_path %>

@@ -1,33 +1,84 @@
+<% provide(:title, "Shipping") %>
+
+<% #if admin_signed_in? %>
+<%= link_to 'New Shipping',  new_admin_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<% #end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Shippings</h1>
+<div class="w3-container">
+  <div class="w3-panel w3-teal w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Shipping</div>
+  <% @admins.each do |admin| %>
+  
+  <div class="shipping w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
 
-<table>
-  <thead>
-    <tr>
-      <th>Date shipped</th>
-      <th>Customer</th>
-      <th>Address</th>
-      <th>Order</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shippings.each do |shipping| %>
-      <tr>
-        <td><%= shipping.date_shipped %></td>
-        <td><%= shipping.customer %></td>
-        <td><%= shipping.address %></td>
-        <td><%= shipping.order %></td>
-        <td><%= link_to 'Show', shipping %></td>
-        <td><%= link_to 'Edit', edit_shipping_path(shipping) %></td>
-        <td><%= link_to 'Destroy', shipping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <p id="notice"><%= notice %></p>
+      
+    <div class="w3-container">
+      <div class="w3-panel w3-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Shipping</div>
+      <% @admins.each do |admin| %>
+      
+      <div class="shipping w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
+        
+      </div>
+  
+    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
+      <h1><%= shipping.date_shipped %></h1>
+      <div class="w3-margin-left"></div>
+      <p><%= shipping.customer %></p>
+      <p><%= shipping.address %></p>
+      <p><%= shipping.order %></p>
+      <p>
+        <% if user_signed_in? %>
+        <%= link_to 'Show', shipping, :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_shipping_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Delete', shipping, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+    
+  <% end %>
+  
+</div>
+  
 <br>
 
-<%= link_to 'New Shipping', new_shipping_path %>
+      
+      <!--<h1>Shippings</h1>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Date shipped</th>
+            <th>Customer</th>
+            <th>Address</th>
+            <th>Order</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <#% @shippings.each do |shipping| %>
+            <tr>
+              <td><#%= shipping.date_shipped %></td>
+              <td><#%= shipping.customer %></td>
+              <td><#%= shipping.address %></td>
+              <td><#%= shipping.order %></td>
+              <td><#%= link_to 'Show', shipping %></td>
+              <td><#%= link_to 'Edit', edit_shipping_path(shipping) %></td>
+              <td><#%= link_to 'Destroy', shipping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <#% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      
+      <#%= link_to 'New Shipping', new_shipping_path %>-->
