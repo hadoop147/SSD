@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
+    #@categories = Category.all
   end
 
   def about
@@ -32,6 +33,10 @@ class StaticPagesController < ApplicationController
   def paid
     @order = Order.last
     @order.update_attribute(:status, 'Order Paid')
+  end
+  
+  def categories
+    @categories = Category.all
   end
   
 end

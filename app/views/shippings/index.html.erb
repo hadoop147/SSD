@@ -1,29 +1,16 @@
-<% provide(:title, "Shipping") %>
+<% provide(:title, "Shippings") %>
 
 <% #if admin_signed_in? %>
-<%= link_to 'New Shipping',  new_admin_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
+<%= link_to 'New Shipping',  new_shipping_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 <% #end %>
 
 <p id="notice"><%= notice %></p>
 
 <div class="w3-container">
   <div class="w3-panel w3-teal w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Shipping</div>
-  <% @admins.each do |admin| %>
+  <% @shippings.each do |shipping| %>
   
   <div class="shipping w3-container">
-      <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
-        
-      </div>
-  
-    <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
-
-      <p id="notice"><%= notice %></p>
-      
-    <div class="w3-container">
-      <div class="w3-panel w3-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Shipping</div>
-      <% @admins.each do |admin| %>
-      
-      <div class="shipping w3-container">
       <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
         
       </div>
@@ -37,7 +24,7 @@
       <p>
         <% if user_signed_in? %>
         <%= link_to 'Show', shipping, :class => "button", :role => "button" %>
-        <%= link_to 'Edit', edit_shipping_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_shipping_path(shipping), :class => "button", :role => "button" %>
         <%= link_to 'Delete', shipping, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
         <% end %>
       </p>

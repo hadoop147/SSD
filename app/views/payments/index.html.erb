@@ -28,7 +28,7 @@
       <p>
         <% if user_signed_in? %>
         <%= link_to 'Show', payment, :class => "button", :role => "button" %>
-        <%= link_to 'Edit', edit_payment_path(brand), :class => "button", :role => "button" %>
+        <%= link_to 'Edit', edit_payment_path(payment), :class => "button", :role => "button" %>
         <%= link_to 'Delete', payment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
         <% end %>
       </p>

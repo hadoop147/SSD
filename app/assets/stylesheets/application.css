@@ -205,6 +205,23 @@ body, h1, h2, h3, h4, h5, h6 {
     /*text-align: center;*/
 }
 
+.address { 
+    margin: auto;
+    width:40%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+.addressSuccess { 
+    margin: auto;
+    width:60%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
+
 /*#itemsContainer {
     width: 100%;
     text-align: center;

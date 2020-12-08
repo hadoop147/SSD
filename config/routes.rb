@@ -63,6 +63,9 @@ Rails.application.routes.draw do
   get '/addresses' => 'static_pages#addresses'
   get '/customers' => 'static_pages#customers'
   
-  get'/search' => 'search_pages#search'
+  get '/search' => 'search_pages#search'
+  
+  #get '/category/:title' => 'static_pages#category'
+  
 
 end
