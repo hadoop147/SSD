@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :items
   resources :shippings
   resources :payments
   resources :products
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   
   #resources :orders
   
+  
+  #security measures for app - permissions for different users
   devise_for :admin do
     resources:orders.all
   end
@@ -23,21 +26,19 @@ Rails.application.routes.draw do
     resources:orders
   end
   
-  get '/checkout' => 'cart#createOrder'
+  #get '/login' => 'user#login'
+  #get '/logout' => 'user#logout'
+  #get '/register' => 'user#register'
   
-  #devise_for :users
-  get 'cart/index'
-
-  resources :items
+  
   root 'static_pages#home'
   
   get '/items' => 'items#index'
   get '/products' => 'products#index'
   
-  #get '/login' => 'user#login'
-  #get '/logout' => 'user#logout'
-  #get '/register' => 'user#register'
-  
+  #cart section
+  get '/checkout' => 'cart#createOrder'
+  get 'cart/index'
   get '/cart' => 'cart#index'
   get 'cart/index'
   get '/cart/:id' => 'cart#add'
@@ -45,7 +46,6 @@ Rails.application.routes.draw do
   get '/remove/:id' => 'cart#remove'
   get '/decrease/:id' => 'cart#decrease'
   get '/increase/:id' => 'cart#increase'
-  
   get '/paid/:id' => 'static_pages#paid'
   get '/done' => 'cart#done'
   
@@ -59,15 +59,20 @@ Rails.application.routes.draw do
   get '/offers' => 'static_pages#offers'
   get '/payments' => 'static_pages#payments'
   get '/brands' => 'static_pages#brands'
-  
   get '/addresses' => 'static_pages#addresses'
   get '/customers' => 'static_pages#customers'
   
+  get '/men' => 'static_pages#men'
+  get '/women' => 'static_pages#women'
+  get '/kids' => 'static_pages#kids'
   get '/search' => 'search_pages#search'
-  
-  #get '/categories' => 'static_pages#categories'
+  get '/categories' => 'static_pages#categories'
   #get '/category/:title' => 'static_pages#category'
+  
+  get '/category' => 'static_pages#category'
   get '/category/:cat_name' => 'static_pages#category'
   
-
+  
+  get '/search' => 'search_pages#search'
+  
 end
