@@ -77,6 +77,14 @@ body, h1, h2, h3, h4, h5, h6 {
     /*text-align: center;*/
 }
 
+.categories1 { 
+    margin: auto;
+    width: 80%;
+    /*border: 10px solid #b3e0ff;*/
+    padding: 10px;
+    /*text-align: center;*/
+}
+
 .login { 
     margin: auto;
     width:25%;

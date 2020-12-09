@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
-    #@categories = Category.all
+    @categories = Category.all
   end
 
   def about
@@ -35,8 +35,14 @@ class StaticPagesController < ApplicationController
     @order.update_attribute(:status, 'Order Paid')
   end
   
-  def categories
-    @categories = Category.all
+  #def categories
+  #  @categories = Category.all
+  #end
+  
+  def category
+    running = params[:cat_name]
+    @items = Item.where("category like ?", running)
+    #@items = Item.all
   end
   
 end

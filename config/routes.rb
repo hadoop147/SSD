@@ -59,13 +59,15 @@ Rails.application.routes.draw do
   get '/offers' => 'static_pages#offers'
   get '/payments' => 'static_pages#payments'
   get '/brands' => 'static_pages#brands'
-  get '/categories' => 'static_pages#categories'
+  
   get '/addresses' => 'static_pages#addresses'
   get '/customers' => 'static_pages#customers'
   
   get '/search' => 'search_pages#search'
   
+  #get '/categories' => 'static_pages#categories'
   #get '/category/:title' => 'static_pages#category'
+  get '/category/:cat_name' => 'static_pages#category'
   
 
 end
