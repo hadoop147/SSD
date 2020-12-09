@@ -7,5 +7,6 @@ class CreateOffers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :offers, :offertype_id
   end
 end
