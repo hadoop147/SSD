@@ -9,11 +9,19 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.decimal :prod_size
       t.string :colours
       t.string :image_url
-      t.references :offer, foreign_key: true
-      t.references :category, foreign_key: true
-      t.references :brand, foreign_key: true
+      t.string :offer
+      t.string :brand
+      t.string :category
+
 
       t.timestamps
     end
   end
 end
+
+
+
+
+     # t.references :offer, foreign_key: true
+      #t.references :category, foreign_key: true
+     # t.references :brand, foreign_key: true

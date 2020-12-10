@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201206175638) do
+ActiveRecord::Schema.define(version: 20201210125320) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "address1"
@@ -130,14 +130,17 @@ ActiveRecord::Schema.define(version: 20201206175638) do
     t.decimal  "prod_size"
     t.string   "colours"
     t.string   "image_url"
-    t.integer  "offer_id"
-    t.integer  "category_id"
-    t.integer  "brand_id"
+    #t.integer  "offer_id"
+    #t.integer  "category_id"
+    #t.integer  "brand_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["offer_id"], name: "index_products_on_offer_id"
+    t.string   "offer"
+    t.string   "category"
+    t.string   "brand"
+   # t.index ["brand_id"], name: "index_products_on_brand_id"
+    #t.index ["category_id"], name: "index_products_on_category_id"
+   # t.index ["offer_id"], name: "index_products_on_offer_id"
   end
 
   create_table "shippings", force: :cascade do |t|
