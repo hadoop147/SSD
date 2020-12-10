@@ -4,12 +4,12 @@
     <% @categories.each do |category| %>
     
     <!-- Category Section -->
-    <div class="womenCat">
-      <div class="w3-card-4 w3-pink w3-quarter w3-margin-right w3-center w3-margin-bottom" > <!--style="width:20%">--> 
+    <!--<div class="womenCat">-->
+      <div class="w3-card-4 w3-pink w3-quarter w3-margin-left w3-center w3-margin-bottom" style="width:353px" >
       <%= image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%") %>
       <a href="/category/<%= category.cat_name %>"> <h5><%= category.cat_name %></h5><!--<h1><%#= category.cat_title %></h1>-->
       </div>  
-    </div>
+    <!--</div>-->
       
     <% end %>
 </div>

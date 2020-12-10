@@ -130,17 +130,17 @@ ActiveRecord::Schema.define(version: 20201210125320) do
     t.decimal  "prod_size"
     t.string   "colours"
     t.string   "image_url"
-    #t.integer  "offer_id"
-    #t.integer  "category_id"
-    #t.integer  "brand_id"
+    t.integer  "offer_id"
+    t.integer  "category_id"
+    t.integer  "brand_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "offer"
     t.string   "category"
     t.string   "brand"
-   # t.index ["brand_id"], name: "index_products_on_brand_id"
-    #t.index ["category_id"], name: "index_products_on_category_id"
-   # t.index ["offer_id"], name: "index_products_on_offer_id"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["offer_id"], name: "index_products_on_offer_id"
   end
 
   create_table "shippings", force: :cascade do |t|

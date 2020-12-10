@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  #resources :search
   resources :items
   resources :shippings
   resources :payments
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
   #get '/logout' => 'user#logout'
   #get '/register' => 'user#register'
   
+  post '/search' => 'items#search'
   
   root 'static_pages#home'
   
@@ -72,7 +74,10 @@ Rails.application.routes.draw do
   get '/category' => 'static_pages#category'
   get '/category/:cat_name' => 'static_pages#category'
   
+  #get '/shoes' => 'static_pages#shoes'
   
-  get '/search' => 'search_pages#search'
+  #get '/search' => 'search_pages#search'
+  
+  
   
 end
