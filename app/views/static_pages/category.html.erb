@@ -9,7 +9,7 @@
 <!--items container-->
 <!--<div id="itemsContainer">-->
 <div class="w3-container">
-  <div class="w3-panel w3-indigo w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Shoes</div>
+  <div class="w3-panel w3-indigo w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Test Category</div>
   <% @items.each do |item| %>
   
   <!--<div class="">-->
@@ -30,6 +30,7 @@
         Brand: <%= item.brand %></p>
         
         <p>
+          <!--<%# if user_signed_in? && current_user.admin? %>-->
           <% if user_signed_in? %>
           <%= link_to 'Show',  item, :class => "button", :role => "button" %>
           <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
@@ -40,6 +41,11 @@
       </div>
     </div>
     
+  <% end %>
+  
+  <% if @items.length == 0  %>
+  <br>
+  <h2>There are currently no products in this category</h2>
   <% end %>
   
   </div>

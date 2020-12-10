@@ -16,6 +16,9 @@ class CreateProducts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :offers, :offertype_id
+    add_index :category, :cat_name_id
+    add_index :brand, :brand_name_id
   end
 end
 

@@ -17,6 +17,9 @@
           <%= @category.description %>
         </p>
         
+        <%# Product.where(category_id: @category.id).each do |product| %>
+        <%# end %>
+        
         <div class="w3-panel w3-pale-green w3-padding-24">
           <%= link_to 'Edit', edit_category_path(@category), :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %> 
           <%= link_to 'Back', categories_path, :class => "w3-button w3-orange w3-hover-green w3-round-large w3-margin-left", :role => "button" %>

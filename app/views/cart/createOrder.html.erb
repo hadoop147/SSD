@@ -1,4 +1,5 @@
-<h1>Thank You</h1>
+<div class="w3-container">
+    <h1>Thank You</h1>
 
 <!-- select top 5 from orders order by id desc -->
 <% @orders.limit(1).order(id: :desc).each do |order| %>
@@ -44,4 +45,6 @@ You Just Placed Order No - <%= order.id %>
             </td>
         </tr>
     </table>
+</div>
+
 </div>
