@@ -1,8 +1,21 @@
 <div class="w3-container">
-    <%= form_tag("/search", :method => "post") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-    <% end %>
+    <div class="w3-deep-orange w3-bottombar w3-border-black" style="height:74px;">
+        
+        <%= form_tag("/search", :method => "post") do %>
+        <%#= label_tag(:q, "Search:") %>
+        
+        <!--<div class="w3-right">-->
+            <%#= submit_tag("Search") %>
+            <%= button_tag :type => "submit", :class => "w3-button w3-right w3-text-white w3-hover-teal w3-padding-16 w3-hover-text-white w3-xlarge" do %>
+             <i class="fa fa-search"></i>
+            <% end %>
+        <!--</div>-->
+            
+        <div class="w3-container w3-right" style= "width:20%">
+            <%= text_field_tag(:q) %>
+        </div>
+            
+        <% end %>
+        
+    </div>
 </div>
-    

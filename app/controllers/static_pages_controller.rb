@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   
   def home
-    @categories = Category.all
+    #@categories = Category.all
+    #@items = Items.all
   end
   
   #def shoes
@@ -33,6 +34,17 @@ class StaticPagesController < ApplicationController
     #@products = Product.where("category like ?", running)
     #@items = Item.all
   end
+  
+  def search
+     st = "%#{params[:q]}%"
+     @items = Item.where("title like ?", st)
+  end
+  
+  #def search
+    #running = params[:title]
+    #@items = Item.where("category like ?", running)
+    #end
+  #end
   
   #def categories
   #  @categories = Category.all
