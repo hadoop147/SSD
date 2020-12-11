@@ -1,42 +1,48 @@
 <div class="w3-container">
+  <div class="w3-panel w3-red w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black w3-animate-zoom">Product Catalogue<%= @search_term %></div>
+
+<!--<div class="w3-container">
     
-    <h2>You Searched Our Product Catalog For <%= @search_term %></h2>
+    <h2>Product Catalogue<%#= @search_term %></h2>-->
     
     <% if @items.length == 0  %>
     <br />
-    <h2>No products were found to match your search</h2>
+    <h1>No products were found to match your search</h1>
     <% end %>
     
+  <% @items.each do |item| %>  
     
-    <table class="catalog">
-      <% @items.each do |item| %>
-          <tr>
-            <td>
-              <div class="image">
-                <%= link_to (image_tag item.image_url, :style => "height:100px"), item %>
-              </div>
-              <div class="title">
-                <%= link_to item.title, item %>
-              </div>
-              <div class="description">
-                <%= item.description %>
-              </div>  
-              <div class="price">
-                 <%= number_to_currency(item.price, :unit => "€") %>
-              </div>
-              <div class="links">
+  <div class="w3-panel w3-card-4 w3-teal w3-padding w3-third w3-margin-left w3-margin-bottom" style="width:30%"> 
+    <!--<table class="catalog">-->
+      <%# @items.each do |item| %>
+          <!--<tr>
+            <td>-->
+              <!--<div class="image">-->
+                <%= link_to (image_tag item.image_url, :style => "height:200px"), item %>
+              <!--</div>-->
+              <!--<div class="title">-->
+                <h1><%= link_to item.title, item %></h1>
+              <!--</div>-->
+              <!--<div class="description">-->
+                <p><%= item.description %></p>
+              <!--</div>-->  
+              <!--<div class="price">-->
+                <p><%= number_to_currency(item.price, :unit => "€") %></p>
+              <!--</div>-->
+              <!--<div class="links">-->
+                <p>
                 <% if user_signed_in? %>
                   <%= link_to 'Edit', edit_item_path(item) %>
-                  <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%else%>
-                
-                  <a href="/cart/<%= item.id %>">Add to Cart</a>
-                <%end%>  
-            </div>
-            </td>
-          </tr>
-        <% end %>
-    </table>
-
-</div>
+                  <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+                <a href="/cart/<%= item.id %>">Add to Cart</a>
+                </p>
+                <%#end%>  
+              </div>
+            <!--</td>
+          </tr>-->
+  <% end %>
+    <!--</table>-->
+  </div>  
+<!--</div>-->
 

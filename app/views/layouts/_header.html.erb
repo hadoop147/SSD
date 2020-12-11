@@ -11,25 +11,22 @@
         <%= link_to "Categories", "/categories", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%= link_to "", "/cart", class: "w3-bar-item w3-button w3-text-white w3-hover-orange w3-right w3-padding-16 w3-hover-text-white fa fa-shopping-cart w3-xlarge" %>
         
-        
-        <%= form_tag("/search", :method => "post") do %>
-        <%#= label_tag(:q, "Search:") %>
-        
-        <div class="w3-right w3-margin-right">
-            <%= submit_tag("Search") %>
-            <%#= button_tag :type => "submit", :class => "w3-button w3-right w3-text-white w3-hover-teal  w3-hover-text-white w3-xxlarge" do %>
-             <!--<i class="fa fa-search"></i>-->
-            <%# end %>
-        </div>
+            <%= form_tag("/search", :method => "post") do %>
+            <%#= label_tag(:q, "Search:") %>
             
-        <div class="w3-container w3-right">
-            <%= text_field_tag(:q) %>
-        </div>
-            
-        <% end %>
-  
-        
-        
+            <div class="w3-container w3-right w3-margin-right w3-small w3-round-small">
+                <%= submit_tag("Search") %>
+                <%#= button_tag :type => "submit", :class => "w3-button w3-right w3-text-white w3-hover-teal  w3-hover-text-white w3-xxlarge" do %>
+                 <!--<i class="fa fa-search"></i>-->
+                <%# end %>
+            </div>
+                
+            <div class="w3-container w3-right w3-small">
+                <%= text_field_tag(:q) %>
+            </div>
+                
+            <% end %>
+      
         <%#= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-xlarge" %>
         <%  if user_signed_in? && current_user.admin? %>
         <%= link_to "Admin", "/admin", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
