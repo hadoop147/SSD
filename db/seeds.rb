@@ -22,23 +22,31 @@
 
 #])
 
-Brand.create([
-    {
-    brand_name: 'Nike',
-    description: 'The best in the world',
-    yearofestablishement: '2001'
-    },
+#Brand.create([
+    #{
+    #brand_name: 'Nike',
+   # description: 'The best in the world',
+   # yearofestablishement: '2001'
+   # },
 
-     {
-    brand_name: 'Addidas',
-    description: 'another best in the world',
-    yearofestablishement: '2005'
-    },
+    #{
+   # brand_name: 'Addidas',
+   # description: 'another best in the world',
+   # yearofestablishement: '2005'
+   # },
 
-     {
-    brand_name: 'Mine',
-    description: 'They all say they are the best in the world',
-    yearofestablishement: '1990'
-    }
+   # {
+   # brand_name: 'Mine',
+  #  description: 'They all say they are the best in the world',
+   # yearofestablishement: '1990'
+   # }
 
-])
+#])
+
+#Product.create([
+
+# {prod_name: 'Kid Shoes'},
+# {}.
+# {}.
+
+# ])
