@@ -1,15 +1,16 @@
 <% provide(:title, "Offers") %>
 
-<% #if admin_signed_in? %>
+<% if current_user.admin %>
 <%= link_to 'New Offers',  new_offer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
-<% #end %>
+<% end %>
+<%= link_to '',  @offer %>
 
 <p id="notice"><%= notice %></p>
 
 <div class="w3-container">
   <div class="w3-panel w3-red w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black w3-animate-zoom">Special Offers</div>
   <% @offers.each do |offer| %>
-  
+
   <!--<div class="">-->
   <div class="offers w3-container">
       <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
@@ -17,22 +18,22 @@
         <div class="w3-margin-left"></div>
         <p><%= offer.description %></p>
         <p>Price Reduction <%= number_to_currency(offer.pricereduction, :unit => "€") %>
-  
+
         <p>
-          <% if user_signed_in? %>
+          <% if current_user.admin %>
           <%= link_to 'Show',  offer, :class => "button", :role => "button" %>
           <%= link_to 'Edit',  edit_offer_path(offer), :class => "button", :role => "button" %>
           <%= link_to 'Delete',  offer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
           <% end %>
-          <a href="/cart/<%= offer.id %>" class="button">Add to Cart</a>
+          <!--<a href="/cart/<%= offer.id %>" class="button">Add to Cart</a>-->
         </p>
       </div>
   </div>
-    
+
   <% end %>
-  
+
   </div>
-  
+
 <br>
 
 

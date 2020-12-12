@@ -1,8 +1,9 @@
 <% provide(:title, "Products") %>
 
-<% #if admin_signed_in? %>
+<% if current_user.admin %>
 <%= link_to 'New Product',  new_product_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
-<% #end %>
+<% end %>
+<% link_to 'Show', @product %>
 
 <p id="notice"><%= notice %></p>
 
@@ -16,11 +17,11 @@
 
 <div class="productsIndex w3-container">
       <div class="w3-sand w3-padding-32 w3-half" style="height:500px">
-        <div class="w3-margin-left w3-xlarge w3-right"> 
+        <div class="w3-margin-left w3-xlarge w3-right">
            <%= link_to (image_tag product.image_url, :class => "productholsIm"), product %>
         </div>
       </div>
-  
+
     <div class="w3-sand w3-padding-64 w3-half" style="height:500px">
       <h1><%= product.prod_name %></h1>
       <div class="w3-margin-left"></div>
@@ -32,12 +33,12 @@
       <!--<p><%#= product.offer %></p>-->
       <p>Price <%= number_to_currency(product.prod_price, :unit => "€") %>
       <br>
-      Category: <%= product.category %> 
+      Category: <%= product.category %>
       <br>
       Brand: <%= product.brand %></p>
-      
+
         <p>
-          <% if user_signed_in? %>
+          <% if current_user.admin %>
           <%= link_to 'Show', product, :class => "button", :role => "button" %>
           <%= link_to 'Edit', edit_product_path(product), :class => "button", :role => "button" %>
           <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
@@ -46,11 +47,11 @@
         </p>
     </div>
   </div>
-    
+
   <% end %>
-  
+
 </div>
-  
+
 <br>
 
 
@@ -86,6 +87,6 @@
         <td><%#= product.offer %></td>
         <td><%#= product.category %></td>
         <td><%#= product.brand %></td>
-        
+
   </tbody>
 </table>-->

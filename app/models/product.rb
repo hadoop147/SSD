@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
 
+
     validates_presence_of :prod_name, :message => 'Please Enter a product name'
     validates :prod_name, length: {minimum: 5}
 
