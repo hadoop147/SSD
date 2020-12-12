@@ -12,11 +12,16 @@ class StaticPagesController < ApplicationController
   end
   
   def men
-    #@categories = Category.all(:select => "DISTINCT(mens_running)")
     @categories = Category.all
+    
+    #@categories = Category.all(:select => "DISTINCT(mens_running)")
     #@category = Category.find(params[:id])
     #@category = Category.where(project_id:'Mens Running')
     #@category = Category.find_by(name: 'Mens Running')
+    
+    #@items = Items.all
+    #shoes = params[:cat_name]
+    #@items = Item.where("item like ?", shoes)
   end
   
   def women

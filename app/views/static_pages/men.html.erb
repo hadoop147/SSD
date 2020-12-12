@@ -1,16 +1,64 @@
-<div class="w3-container">
-  <div class="w3-panel w3-blue w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Mens Categories</div>
+<% provide(:title, "Men") %>
 
-    <% @categories.each do |category| %>
+<div class="w3-container">
+  <div class="w3-panel w3-blue w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Mens Shoes</div>
+
+    <%# @categories.each do |category| %>
+    
+    <%# @items.each do |item| %>
     
     <!-- Category Section -->
     <!--<div class="menCat">-->
-      <div class="w3-card-4 w3-blue w3-quarter w3-margin-left w3-center w3-margin-bottom" style="width:353px" >
-            <%= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %>
+      <!--<div class="w3-card-4 w3-blue w3-quarter w3-margin-left w3-center w3-margin-bottom" style="width:353px" >
+            <%#= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %>
             <!--<img src="/assets/<%# category.image %>" alt="<%# category.cat_name %>" />-->
-              <a href="/category/<%= category.cat_name %>"> <h5><%= category.cat_name %></h5><!--<h1><%#= category.cat_title %></h1>-->
+              <!--<a href="/category/<%#= category.cat_name %>"> <h5><%#= category.cat_name %></h5><!--<h1><%#= category.cat_title %></h1>-->
               <!--<p><%#= category.description %></p>-->
-        </div>  
-    <!--</div>-->
-    <% end %>
+        <!--</div>-->  
+    <!--</div>--
+
+    <%# end %>
 </div>
+
+
+<!--items container-->
+<!--<div id="itemsContainer">-->
+<div class="w3-container">
+  <div class="w3-panel w3-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Items</div>
+  
+  <% @items.each do |item| %>
+  
+  <!--<div class="">-->
+  <div class="itemsIndex w3-container">
+      <div class="w3-sand w3-padding-32 w3-half" style="height:450px">
+        <div class="w3-margin-left w3-xlarge w3-right"> 
+           <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+        </div>
+      </div>
+      <div class="w3-sand w3-padding-64 w3-half" style="height:450px">
+        <h1><%= item.title %></h1>
+        <div class="w3-margin-left"></div>
+        <p><%= item.description %></p>
+        <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+        <br>
+        Category: <%= item.category %>
+        <br>
+        Brand: <%= item.brand %></p>
+        
+        <p>
+          <% if user_signed_in? %>
+          <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+          <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+          <%= link_to 'Delete',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+          <% end %>
+          <a href="/cart/<%= item.id %>" class="button">Add to Cart</a>
+        </p>
+      </div>
+    </div>
+    
+  <% end %>
+  
+  </div>
+  
+<br>
+

@@ -62,8 +62,14 @@ Rails.application.routes.draw do
   get '/customers' => 'static_pages#customers'
   
   get '/men' => 'static_pages#men'
+  #get '/item/:title' => 'static_pages#items'
+  
   get '/women' => 'static_pages#women'
+  #get '/women' => 'static_pages#women'
+  
   get '/kids' => 'static_pages#kids'
+  #get '/kids' => 'static_pages#kids'
+  
   #get '/search' => 'search_pages#search'
   get '/categories' => 'static_pages#categories'
   #get '/category/:title' => 'static_pages#category'
