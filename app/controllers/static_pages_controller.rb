@@ -5,11 +5,11 @@ class StaticPagesController < ApplicationController
     #@items = Items.all
   end
   
-  #def shoes
-  # @categories = Category.all
+  def shoes
+   @categories = Category.all
   # running = params[:cat_name]
   # @items = Item.where("category like ?", running)
-  #end
+  end
   
   def men
     #@categories = Category.all(:select => "DISTINCT(mens_running)")

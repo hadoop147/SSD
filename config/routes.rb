@@ -75,4 +75,6 @@ Rails.application.routes.draw do
   get '/search' => 'static_pages#search'
   get '/search/:title' => 'static_pages#search'
   
+  get '/shoes' => 'static_pages#shoes'
+  
 end

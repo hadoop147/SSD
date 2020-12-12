@@ -2,31 +2,31 @@
 
     <div class="w3-bar w3-black w3-large"  style="height:55px;" >
         <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 fa fa-home w3-xlarge" %>
-        <%#= link_to "Shoes", "/shoes", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
-        <%= link_to "Men", "/men", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
-        <%= link_to "Women", "/women", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-padding-16" %>
-        <%= link_to "Kids", "/kids", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
-        <%= link_to "Items", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%= link_to "Shoes", "/shoes", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%#= link_to "Men", "/men", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%#= link_to "Women", "/women", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-padding-16" %>
+        <%#= link_to "Kids", "/kids", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
+        <%#= link_to "Items", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%= link_to "Products", "/products", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
-        <%= link_to "Categories", "/categories", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%#= link_to "Categories", "/categories", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%= link_to "", "/cart", class: "w3-bar-item w3-button w3-text-white w3-hover-orange w3-right w3-padding-16 w3-hover-text-white fa fa-shopping-cart w3-xlarge" %>
         
-            <%= form_tag("/search", :method => "post") do %>
-            <%#= label_tag(:q, "Search:") %>
+        <%= form_tag("/search", :method => "post") do %>
+        <%#= label_tag(:q, "Search:") %>
             
-            <div class="w3-container w3-right w3-small">
-                <%#= submit_tag("Search") %>
-                <%= button_tag :type => "submit", :class => "w3-button w3-right w3-text-white w3-hover-teal w3-hover-text-white w3-xlarge", style: "height:55px" do %>
-                 <i class="fa fa-search"></i>
-                <% end %>
-            </div>
-                
-            <div class="w3-container w3-right w3-small">
-                <%#= text_field_tag(:q) %>
-                <%= text_field_tag (:q), 'Enter search term...', :onclick => 'if($(this).val()=="Enter search term..."){$(this).val("");};' %>
-            </div>
-                
+        <div class="w3-container w3-right w3-small">
+            <%#= submit_tag("Search") %>
+            <%= button_tag :type => "submit", :class => "w3-button w3-right w3-text-white w3-hover-teal w3-hover-text-white w3-xlarge", style: "height:55px" do %>
+                <i class="fa fa-search"></i>
             <% end %>
+        </div>
+                
+        <div class="w3-container w3-right w3-small">
+            <%#= text_field_tag(:q) %>
+            <%= text_field_tag (:q), 'Enter search term...', :onclick => 'if($(this).val()=="Enter search term..."){$(this).val("");};' %>
+        </div>
+                
+        <% end %>
       
         <%#= link_to "", "/search", class: "w3-bar-item w3-button w3-right w3-text-white w3-hover-purple w3-padding-16 w3-hover-text-white fa fa-search w3-xlarge" %>
         <%  if user_signed_in? && current_user.admin? %>
