@@ -2,10 +2,10 @@
 
     <div class="w3-bar w3-black w3-large"  style="height:55px;" >
         <%= link_to "", "/", class: "w3-bar-item w3-button w3-text-white w3-hover-red w3-padding-16 fa fa-home w3-xlarge" %>
-        <%= link_to "Shoes", "/shoes", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
-        <%#= link_to "Men", "/men", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
-        <%#= link_to "Women", "/women", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-padding-16" %>
-        <%#= link_to "Kids", "/kids", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
+        <%#= link_to "Shoes", "/shoes", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%= link_to "Men", "/men", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
+        <%= link_to "Women", "/women", class: "w3-bar-item w3-button w3-text-white w3-hover-pink w3-padding-16" %>
+        <%= link_to "Kids", "/kids", class: "w3-bar-item w3-button w3-text-white w3-hover-green w3-padding-16" %>
         <%#= link_to "Items", "/items", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%= link_to "Products", "/products", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
         <%#= link_to "Categories", "/categories", class: "w3-bar-item w3-button w3-text-white w3-hover-blue w3-padding-16" %>
@@ -23,7 +23,7 @@
                 
         <div class="w3-container w3-right w3-small">
             <%#= text_field_tag(:q) %>
-            <%= text_field_tag (:q), 'Enter search term...', :onclick => 'if($(this).val()=="Enter search term..."){$(this).val("");};' %>
+            <%= text_field_tag (:q), 'Enter your search...', :onclick => 'if($(this).val()=="Enter your search..."){$(this).val("");};' %>
         </div>
                 
         <% end %>
