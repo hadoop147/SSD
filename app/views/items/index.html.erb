@@ -32,7 +32,7 @@
 
         <p>
           <% if current_user.admin %>
-          <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+
           <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
           <%= link_to 'Delete',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
           <% end %>

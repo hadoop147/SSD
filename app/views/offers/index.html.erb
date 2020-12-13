@@ -3,8 +3,9 @@
 <% if current_user.admin %>
 <%= link_to 'New Offers',  new_offer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 <% end %>
-<%= link_to '',  @offer %>
-
+<% if current_user %>
+<%= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <div class="w3-container">
@@ -25,7 +26,7 @@
           <%= link_to 'Edit',  edit_offer_path(offer), :class => "button", :role => "button" %>
           <%= link_to 'Delete',  offer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
           <% end %>
-          <!--<a href="/cart/<%= offer.id %>" class="button">Add to Cart</a>-->
+          <%= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
         </p>
       </div>
   </div>
