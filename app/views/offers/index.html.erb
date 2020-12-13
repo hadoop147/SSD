@@ -3,9 +3,11 @@
 <% if current_user.admin %>
 <%= link_to 'New Offers',  new_offer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 <% end %>
-<% if current_user %>
-<%= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
-<% end %>
+
+<%# if current_user %>
+<%#= link_to 'Sign in', new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-amber w3-right w3-padding-16" %>
+<%# end %>
+
 <p id="notice"><%= notice %></p>
 
 <div class="w3-container">
