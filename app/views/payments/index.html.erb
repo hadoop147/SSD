@@ -1,20 +1,20 @@
 <% provide(:title, "Payments") %>
 
-<% #if admin_signed_in? %>
+<% if current_user.admin? %>
 <%= link_to 'New Payment',  new_payment_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
-<% #end %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 
 <div class="w3-container">
   <div class="w3-panel w3-yellow w3-text-black w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Payments</div>
   <% @payments.each do |payment| %>
-  
+
   <div class="admins w3-container">
       <div class="w3-sand w3-padding-32 w3-half" style="height:400px">
-        
+
       </div>
-  
+
     <div class="w3-sand w3-padding-64 w3-half" style="height:400px">
     <!--<#% @payments.each do |payment| %>-->
       <h1><%= payment.pay_method %></h1>
@@ -34,11 +34,11 @@
       </p>
     </div>
   </div>
-    
+
   <% end %>
-  
+
 </div>
-  
+
 
 
 <!--<h1>Payments</h1>
