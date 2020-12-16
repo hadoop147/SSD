@@ -28,11 +28,11 @@
               </div>
               <div class="links">
                 <% if user_signed_in? %>
-                  <%= link_to 'Edit', edit_item_path(item) %>
-                  <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Edit', edit_item_path(item), :class => "button", :role => "button" %>
+                  <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
                 <%else%>
                 
-                  <a href="/cart/<%= item.id %>">Add to Cart</a>
+                  <a href="/cart/<%= item.id %>" class="button">Add to Cart</a>
                 <%end%>  
             </div>
             </td>

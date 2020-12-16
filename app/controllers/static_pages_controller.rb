@@ -5,21 +5,14 @@ class StaticPagesController < ApplicationController
     #@items = Items.all
   end
 
-  def shoes
-   @categories = Category.all
+  #def shoes
+   #@categories = Category.all
   # running = params[:cat_name]
   # @items = Item.where("category like ?", running)
-  end
+  #end
 
   def men
     @categories = Category.all
-
-    #@categories = Category.all(:select => "DISTINCT(mens_running)")
-    #@category = Category.find(params[:id])
-    #@category = Category.where(project_id:'Mens Running')
-    #@category = Category.find_by(name: 'Mens Running')
-
-    #@items = Items.all
     #shoes = params[:cat_name]
     #@items = Item.where("item like ?", shoes)
   end
@@ -86,12 +79,14 @@ class StaticPagesController < ApplicationController
   @user = User.find_by(id: params[:id])
   @user.update_attribute(:admin, true)
   redirect_to "/"
+  #redirect_to :controller => :"/"
   end
 
   def removeadmin
     @user = User.find_by(id: params[:id])
     @user.update_attribute(:admin, false)
     redirect_to "/"
+    #redirect_to :controller => :"/"
   end
 
 #Dealing with order payment
