@@ -69,13 +69,11 @@ Rails.application.routes.draw do
   #get '/item/:title' => 'static_pages#items'
 
   get '/women' => 'static_pages#women'
-  #get '/women' => 'static_pages#women'
 
   get '/kids' => 'static_pages#kids'
-  #get '/kids' => 'static_pages#kids'
 
   #get '/search' => 'search_pages#search'
-  get '/categories' => 'static_pages#categories'
+  #get '/categories' => 'static_pages#categories'
   #get '/category/:title' => 'static_pages#category'
 
   get '/category' => 'static_pages#category'

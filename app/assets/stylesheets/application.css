@@ -88,7 +88,7 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .categories { 
     margin: auto;
-    width:50%;
+    width:80%;
     /*border: 10px solid #b3e0ff;*/
     padding: 10px;
     /*text-align: center;*/
@@ -96,10 +96,12 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .categories1 { 
     margin: auto;
-    width: 80%;
+    width: 50%;
     /*border: 10px solid #b3e0ff;*/
     padding: 10px;
-    /*text-align: center;*/
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .login { 
@@ -247,12 +249,12 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .cate { 
-    /*margin: auto;*/
+    margin: auto;
     /*width:60%;*/
     /*border: 10px solid #b3e0ff;*/
     /*padding: 10px;*/
     /*text-align: center;*/
-    margin-left: 130px;
+    /*margin-left: 130px;*/
 }
 
 .menCat { 

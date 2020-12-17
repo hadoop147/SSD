@@ -4,12 +4,22 @@
     <% @categories.each do |category| %>
     
     <!-- Category Section -->
-    <div class="cate">
-      <div class="w3-card-4 w3-green w3-quarter w3-margin-right w3-center w3-margin-bottom"> <!--style="width:20%">-->
-            <%= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %>
-              <a href="/category/<%= category.cat_name %>"> <h5><%= category.cat_name %></h5><!--<h1><%#= category.cat_title %></h1>-->
-              <!--<p><%#= category.description %></p>-->
-        </div>  
-    </div>
+    <div class="w3-panel w3-card-4 w3-teal w3-center w3-padding w3-quarter w3-margin-left" style="width:275px">
+      <a href="/category/<%= category.cat_name %>"> <img src="/assets/<%= category.image %>" alt="<%= category.cat_name %>" style= "width:100%"/> <h5><%= category.cat_name %></h5>
+    </div>  
+    
     <% end %>
 </div>
+
+
+      <!--<div class="w3-panel w3-card-4 w3-teal w3-center w3-padding w3-quarter w3-margin-left" style="width:275px">-->
+      <!--<div class="w3-card-4 w3-green w3-quarter w3-margin-right w3-center w3-margin-bottom"> <!--style="width:20%">-->
+          <%#= link_to (image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")) %>
+          <%#= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %>
+          <!--<a href="/category/<%#= category.cat_name %>"> <img src="/assets/<%#= category.image %>" alt="<%#= category.cat_name %>" style= "width:100%"/> <h5><%#= category.cat_name %></h5>-->
+          <!--<p><%#= category.description %></p>-->
+      <!--</div>  
+    
+    <%# end %>
+</div>-->
+

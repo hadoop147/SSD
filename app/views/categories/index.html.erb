@@ -1,6 +1,6 @@
 <% provide(:title, "Categories") %>
 
-<%# if admin_signed_in? %>
+<%# if current_user.admin? %>
 <%# if user_signed_in? && current_user.admin? %>
 <%= link_to 'New Category',  new_category_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 <%# end %>
@@ -19,6 +19,7 @@
       </div>-->
   <!--<div class="cats">-->
     <div class="w3-panel w3-card-4 w3-sand w3-padding w3-quarter w3-margin-left" style="width:32%"> 
+      <img src="/assets/<% category.image %>" alt="<% category.cat_name %>" />
       <h1><%= category.cat_name %></h1>
       <!--<div class="w3-margin-left"></div>
       <p><%#= category.description %></p>-->

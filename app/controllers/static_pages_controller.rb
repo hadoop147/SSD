@@ -1,15 +1,15 @@
 class StaticPagesController < ApplicationController
 
   def home
-    #@categories = Category.all
+    @categories = Category.all
     #@items = Items.all
   end
 
-  #def shoes
-   #@categories = Category.all
+  def shoes
+   @categories = Category.all
   # running = params[:cat_name]
   # @items = Item.where("category like ?", running)
-  #end
+  end
 
   def men
     @categories = Category.all
@@ -93,6 +93,7 @@ class StaticPagesController < ApplicationController
   def paid
     @order = Order.last
     @order.update_attribute(:status, 'Order Paid')
+    #redirect_to "/items"
   end
 
 end

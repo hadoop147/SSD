@@ -1,25 +1,63 @@
-<div class="w3-container">
-  <p id="notice"><%= notice %></p>
-
-<% if current_user.admin? %> <!-- code for admin -->
-
-<!-- real admin following-->
-<% @users.each do |user| %>
-
-<p>User Id: <%= user.id %></p> <!-- number -->
-<p>First Name: <%= user.fname %></p> <!-- email -->
-<p>Is Admin?: <%= user.admin %></p> <!-- email -->
-<a href = "/makeadmin/<%= user.id %>" class="button">Make <%= user.email.split('@')[0].capitalize %> Admin</a> <!-- code for admin - button to allow the option -->
-<a href = "/removeadmin/<%= user.id %>" class="button">Remove <%= user.email.split('@')[0].capitalize %> Admin</a> <!-- make admin or remove from admin -->
-<% end %>
-
-<% end %>
-
-</div>
-
-<div>
+<% provide(:title, "Admin") %>
 
 <%= link_to 'New Order', new_order_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button"  %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="w3-container">
+  <!--<p id="notice"><%#= notice %></p>-->
+
+  <% if current_user.admin? %> <!-- code for admin -->
+  
+    <!-- real admin following-->
+    <% @users.each do |user| %>
+    
+    <p>User Id: <%= user.id %></p> <!-- number -->
+    <p>First Name: <%= user.fname %></p> <!-- email -->
+    <p>Is Admin?: <%= user.admin %></p> <!-- email -->
+    <a href = "/makeadmin/<%= user.id %>" class="button">Make <%= user.email.split('@')[0].capitalize %> Admin</a> <!-- code for admin - button to allow the option -->
+    <a href = "/removeadmin/<%= user.id %>" class="button">Remove <%= user.email.split('@')[0].capitalize %> Admin</a> <!-- make admin or remove from admin -->
+    <% end %>
+  
+  <% end %>
+
+</div>
+  
+  <div class="w3-container">
+  <div class="w3-panel w3-pale-green w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black w3-animate-zoom">Orders</div>
+  
+    <div class="w3-panel">
+      <table class="w3-table-all w3-card-4 w3-large">
+         <% @orders.each do |order| %>
+        <tr>
+          <th>Order date</th>
+          <th>User</th>
+          <th>Status</th>
+        </tr>
+       
+        <tr>
+          <td><%= order.order_date %></td>
+          <td><%= order.user %></td>
+          <td><%= order.status %></td>
+          <% if user_signed_in? %>
+          <td><%= link_to 'Show', order, :class => "button", :role => "button" %></td>
+          <td><%= link_to 'Edit', edit_order_path(order), :class => "button", :role => "button" %></td>
+          <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %></td>
+          <% end %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<!--</div>-->
+
+<!--<br>-->
+
+<!--</div>-->
+
+<!--<div>
+
+<%#= link_to 'New Order', new_order_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button"  %>
 
   <h1>Orders</h1>
 
@@ -34,19 +72,18 @@
     </thead>
 
     <tbody>
-      <% @orders.each do |order| %>
+      <%# @orders.each do |order| %>
         <tr>
-          <td><%= order.order_date %></td>
-          <td><%= order.user %></td>
-          <td><%= order.status %></td>
-          <td><%= link_to 'Show', order %></td>
-          <td><%= link_to 'Edit', edit_order_path(order) %></td>
-          <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%#= order.order_date %></td>
+          <td><%#= order.user %></td>
+          <td><%#= order.status %></td>
+          <td><%#= link_to 'Show', order %></td>
+          <td><%#= link_to 'Edit', edit_order_path(order) %></td>
+          <td><%#= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-      <% end %>
+      <%# end %>
     </tbody>
   </table>
 
   <br>
-</div>
-
+</div>-->

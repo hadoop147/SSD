@@ -10,13 +10,63 @@
   </div>
 </div>
 
+<!--Categories Section-->
+<div class="w3-container">
+  <div class="w3-panel w3-orange w3-jumbo w3-center w3-topbar w3-bottombar w3-border-black">Categories</div>
+
+    <% @categories.each do |category| %>
+    
+    <div class="categories1 w3-panel w3-card-4 w3-sand">
+      <a href="/category/<%= category.cat_name %>"> <img src="/assets/<%= category.image %>" alt="<%= category.cat_name %>" style= "width:100%"/> <h5><%= category.cat_name %></h5>
+    </div>
+    <% end %>
+  </div>
+    
+    <!-- Category Section -->
+      <!--<div class="w3-card-4 w3-teal w3-center w3-quarter w3-margin-left w3-margin-bottom" style="width:470px"> 
+      <!--<div class="w3-card-4 w3-green w3-quarter w3-margin-right w3-center w3-margin-bottom" ><!--</div>style="width:27%">-->
+          <%#= image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%") %>
+          <%#= link_to (image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")) %>
+          <!--<a href="/category/<%#= category.cat_name %>"> <h5><%#= category.cat_name %></h5><!--<h1><%#= category.cat_title %></h1>-->
+          <!--<p><%#= category.description %></p>-->
+      <!--</div>  
+    <%# end %>
+</div>-->
+  
+  <!--<div class="w3-panel w3-card-4 w3-teal w3-center w3-padding w3-quarter w3-margin-left" style="width:275px">-->
+  <!--<div class="w3-panel">
+    <div class="categories1 w3-card-4 w3-teal w3-third">--> 
+    <!--<div class="categories1 w3-card-4">-->
+      <!--<div class="categories1 w3-container w3-border">-->
+        <!--<div class="w3-display-container ">-->
+        <!--<h1>Categories</h1>-->
+        <%# @categories.each do |category| %>
+    
+        <!--<div class="w3-container">-->
+        <!--<a href="/category/<%#= category.cat_name %>"> <img src="/assets/<%#= category.image %>" alt="<%#= category.cat_name %>" style= "width:100%" /> <h1><%#= category.cat_name %></h1>-->
+        <!--<a href="/category/<%#= category.cat_name %>"> <img src="/assets/<%#= category.image %>" alt="<%#= category.cat_name %>" style= "width:100%"/> <h5><%#= category.cat_name %></h5>-->
+
+        <!--<a href="/category/<%#= category.title %>">-->
+        <!--<img src="/assets/<%# category.image %>" alt="<%# category.cat_name %>"/>-->
+        <!--<p><%#= category.description %></p>-->
+         <%#= image_tag("shoes2.jpg", alt: "Shoes", style: "width:100%")  %>
+        <!--</div>-->
+        <%# end %>
+        <!--</div>-->
+    <!--</div>
+    <%# end %>
+  </div>-->
+  
+
+<!--<a href="/category/<%#= category.title %>"> <img src="/assets/<%#= category.image %>" alt="<%#= category.title %>" /> </a>-->
+
 <!-- Card Image Section -->
-<div class="w3-panel">
+<!--<div class="w3-panel">
   <div class="w3-row-padding w3-margin-top">
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
         <%#= link_to (image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")), items_url %>
-        <%= link_to (image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")), men_url %>
+        <%#= link_to (image_tag("menShoe.jpg", alt: "Mens Shoe", style: "width:100%")), men_url %>
         <div class="w3-container w3-center">
           <h5>Mens Shoes</h5>
         </div>
@@ -26,7 +76,7 @@
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
         <%#= link_to (image_tag("womShoe.jpg", alt: "Womens Shoe", style: "width:100%")), items_url %>
-        <%= link_to (image_tag("womShoe.jpg", alt: "Mens Shoe", style: "width:100%")), women_url %>
+        <%#= link_to (image_tag("womShoe.jpg", alt: "Mens Shoe", style: "width:100%")), women_url %>
         <div class="w3-container w3-center">
           <h5>Womens Shoes</h5>
         </div>
@@ -36,7 +86,7 @@
     <div class="w3-third">
       <div class="w3-card w3-hover-opacity">
         <%#= link_to (image_tag("kidShoe.jpg", alt: "Kids Shoe", style: "width:100%")), items_url %>
-        <%= link_to (image_tag("kidShoe.jpg", alt: "Mens Shoe", style: "width:100%")), kids_url %>
+        <%#= link_to (image_tag("kidShoe.jpg", alt: "Mens Shoe", style: "width:100%")), kids_url %>
         <div class="w3-container w3-center">
           <h5>Kids Shoes</h5>
         </div>
@@ -45,23 +95,4 @@
   </div>
 </div>
 
-<br>
-
-
-<!--<div class="categories1 w3-container w3-border">
-  <div class="w3-display-container ">
-    <h1>Categories</h1>
-    <%# @categories.each do |category| %>
-
-    <div class="w3-container">
-     <a href="/category/<%#= category.cat_name %>"> <h1><%#= category.cat_name %></h1><!--<h1><%#= category.cat_title %></h1>-->
-     <!--
-<a href="/category/<%#= category.title %>">
-<img src="/assets/<%# category.image %>" alt="<%# category.cat_name %>" />-->
-     <!--<p><%#= category.description %></p>
-     <%#= image_tag("shoes2.jpg", alt: "Shoes", style: "width:100%")  %>
-    </div>
-    <%# end %>
-
-  </div>
-</div>-->
+<br>-->
