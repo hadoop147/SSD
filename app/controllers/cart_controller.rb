@@ -98,5 +98,10 @@ class CartController < ApplicationController
     #@orderitems = Orderitem.where(order_id: Order.limit(1).order(id: :desc).where(user: User.find(current_user.id)))
     #Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
   #end
+  
+  #def paid
+  #  redirect_to :action => :items
+  #end
+    
 end
   

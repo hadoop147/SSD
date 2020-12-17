@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get '/checkout' => 'cart#createOrder'
   get 'cart/index'
   get '/cart' => 'cart#index'
-  get 'cart/index'
+  #get 'cart/index'
   get '/cart/:id' => 'cart#add'
   get '/clearcart' => 'cart#clearcart'
   get '/remove/:id' => 'cart#remove'
