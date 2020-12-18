@@ -33,8 +33,8 @@ git push**
 
 Pending migration error can come from the new class not been pushed/added to the table. I found that you have to migrate the change again for it to work.
 rails db:migrate:status
-rails generate migration AddIndexToOffers offertype_id
-#(rails generate migration add_offertype_id_to_offers offertype_id:string)
+rails generate migration AddIndexToOffer offertype_id
+#(rails generate migration add_offertype_id_to_offer offertype_id:string)
 rails db:migrate
 rake db:reset
 rails db:migrate
