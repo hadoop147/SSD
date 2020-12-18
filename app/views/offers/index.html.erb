@@ -1,6 +1,6 @@
 <% provide(:title, "Offers") %>
 
-<% if current_user.admin %>
+<% if user_signed_in? && current_user.admin? %>
 <%= link_to 'New Offers',  new_offer_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button" %>
 <% end %>
 
@@ -23,7 +23,7 @@
         <p>Price Reduction <%= number_to_currency(offer.pricereduction, :unit => "€") %>
 
         <p>
-          <% if current_user.admin %>
+          <% if user_signed_in? && current_user.admin? %>
           <%= link_to 'Show',  offer, :class => "button", :role => "button" %>
           <%= link_to 'Edit',  edit_offer_path(offer), :class => "button", :role => "button" %>
           <%= link_to 'Delete',  offer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>

@@ -16,22 +16,23 @@
          <% @orders.each do |order| %>
         <tr>
           <th>Order date</th>
-          <th>User</th>
+          <th>Ordered By</th>
           <th>Status</th>
         </tr>
-       
+
         <tr>
           <td><%= order.order_date %></td>
-          <td><%= order.user %></td>
+          <td><%= order.user.fname %></td>
           <td><%= order.status %></td>
           <% if user_signed_in? %>
           <td><%= link_to 'Show', order, :class => "button", :role => "button" %></td>
           <td><%= link_to 'Edit', edit_order_path(order), :class => "button", :role => "button" %></td>
-          <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %></td>
+          <td><%= link_to 'Back', orders_path, :class => "button", :role => "button" %></td>
           <% end %>
         </tr>
         <% end %>
       </table>
+
     </div>
   </div>
 </div>

@@ -45,3 +45,19 @@
         <%= link_to "Register", new_user_registration_path, class: "w3-bar-item w3-button w3-text-white w3-hover-yellow w3-right w3-padding-16 w3-mobile" %> 
         <%= link_to "Log in", new_user_session_path, class: "w3-bar-item w3-button w3-text-white w3-hover-teal w3-right w3-padding-16 w3-mobile" %>
         <% end %>
+        
+        
+_categories.html.erb
+<h1>Categories</h1>
+<br>
+
+  <% @categories.each do |category| %>
+       <div class="itemhols">
+           <p><%= category.title %></p>
+           <%= link_to (image_tag category.image, :class=>"itemholsIm"), category %>
+           <p><%= category.description %></p>
+         </div>
+    
+    <% end %>
+
+

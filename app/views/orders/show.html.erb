@@ -59,7 +59,10 @@
             <p>Total =  <%= number_to_currency(@overalltotal, :unit =>"€")  %></p>
         </div>
         
-                
+        <tr>
+            <td><%= link_to 'Back', orders_path, :class => "button", :role => "button" %></td>
+        </tr>
+        
     </div>
     
     <% else %>

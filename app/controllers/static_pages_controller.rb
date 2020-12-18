@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @categories = Category.all
-    #@items = Items.all
+    @items = Item.all
   end
 
   def shoes
@@ -60,6 +60,11 @@ class StaticPagesController < ApplicationController
   #def support
     #session[:cart] = nil #a little hack to clear cart if you make error and it refuses to clear the session and clears the error in your code
   #end
+  
+  def myOrder
+    @user= User.find(current_user.id)
+    @orders = @user.orders.all
+  end
 
   def returns
   end
@@ -93,7 +98,6 @@ class StaticPagesController < ApplicationController
   def paid
     @order = Order.last
     @order.update_attribute(:status, 'Order Paid')
-    #redirect_to "/items"
   end
 
 end

@@ -2,10 +2,10 @@
 
 <%= link_to 'New Order', new_order_path, :class => "w3-button w3-orange w3-hover-green w3-round-xxlarge w3-margin-left", :role => "button"  %>
 
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
 
 <div class="w3-container">
-  <!--<p id="notice"><%#= notice %></p>-->
+  <p id="notice"><%#= notice %></p>
 
   <% if current_user.admin? %> <!-- code for admin -->
   

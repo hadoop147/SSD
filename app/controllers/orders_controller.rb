@@ -5,18 +5,30 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     #@orders = Order.all
+    if user_signed_in? && current_user.admin?
     @user = User.find(current_user.id)
     @orders = @user.orders.all
+    else
+      redirect_to "/"
+    end
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to "/"
+    end
     @orderitems = Orderitem.where(order_id: params[:id])
   end
 
   # GET /orders/new
   def new
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to "/"
+    end
     @order = Order.new
   end
 

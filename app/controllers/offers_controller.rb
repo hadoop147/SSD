@@ -10,15 +10,27 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to "/"
+    end
   end
 
   # GET /offers/new
   def new
     @offer = Offer.new
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to "/"
+    end
   end
 
   # GET /offers/1/edit
   def edit
+    if user_signed_in? && current_user.admin?
+    else
+      redirect_to "/"
+    end
   end
 
   # POST /offers
