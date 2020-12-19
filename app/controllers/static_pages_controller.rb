@@ -97,6 +97,7 @@ class StaticPagesController < ApplicationController
 #Dealing with order payment
   def paid
     @order = Order.last
+    #@order = Order.find(params[:id])
     #@order.update_attribute(:status, 'Order Paid')
     @order.update_attribute(:status, 'Paid with PayPal')
   end

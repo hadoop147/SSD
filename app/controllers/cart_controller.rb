@@ -37,7 +37,7 @@ class CartController < ApplicationController
     id = params[:id]
     cart = session[:cart]
     cart.delete id
-    redirect_to :root
+    redirect_to :cart
   end
     
   def decrease
